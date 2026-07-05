@@ -1,0 +1,8 @@
+﻿[Desktop Entry]
+Type=Application
+Name=Person
+Comment=OSINT: email, username, name
+Categories=Network;OSINT;
+Exec=__HOME__/.local/share/wukong/scripts/user.sh
+Icon=__HOME__/.local/share/icons/wukong/wukong-user.png
+Terminal=false

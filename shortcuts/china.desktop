@@ -1,0 +1,8 @@
+﻿[Desktop Entry]
+Type=Application
+Name=China OSINT
+Comment=Sinophone OSINT: Weibo, Douyin, Baidu, fofa
+Categories=Network;OSINT;
+Exec=__HOME__/.local/share/wukong/scripts/china.sh
+Icon=__HOME__/.local/share/icons/wukong/wukong-china.png
+Terminal=false

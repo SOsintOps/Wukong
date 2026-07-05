@@ -1,0 +1,8 @@
+﻿[Desktop Entry]
+Type=Application
+Name=Exploratores
+Comment=Launch Exploratores, in-browser OSINT toolkit
+Categories=Network;Security;
+Exec=firefox-esr file://__HOME__/Documents/Exploratores/launchme.html
+Icon=firefox-esr
+Terminal=false

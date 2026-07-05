@@ -1,0 +1,8 @@
+﻿[Desktop Entry]
+Type=Application
+Name=Reddit
+Comment=OSINT: Reddit user analysis
+Categories=Network;OSINT;
+Exec=__HOME__/.local/share/wukong/scripts/reddit.sh
+Icon=__HOME__/.local/share/icons/wukong/wukong-reddit.png
+Terminal=false

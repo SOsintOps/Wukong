@@ -1,0 +1,8 @@
+﻿[Desktop Entry]
+Type=Application
+Name=Instagram
+Comment=OSINT: Instagram profiles and media
+Categories=Network;OSINT;
+Exec=__HOME__/.local/share/wukong/scripts/instagram.sh
+Icon=__HOME__/.local/share/icons/wukong/wukong-instagram.png
+Terminal=false

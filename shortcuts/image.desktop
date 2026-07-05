@@ -1,0 +1,8 @@
+﻿[Desktop Entry]
+Type=Application
+Name=Image & Metadata
+Comment=OSINT: EXIF, metadata, image forensics
+Categories=Network;OSINT;
+Exec=__HOME__/.local/share/wukong/scripts/image.sh
+Icon=__HOME__/.local/share/icons/wukong/wukong-image.png
+Terminal=false

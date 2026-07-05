@@ -1,0 +1,8 @@
+﻿[Desktop Entry]
+Type=Application
+Name=Evidence
+Comment=Open investigation evidence directory
+Categories=OSINT;
+Exec=xdg-open __HOME__/Downloads/evidence
+Icon=__HOME__/.local/share/icons/wukong/wukong-evidence.png
+Terminal=false

@@ -1,0 +1,8 @@
+﻿[Desktop Entry]
+Type=Application
+Name=China KYC
+Comment=Chinese corporate due diligence: ICP, GSXT, ENScan
+Categories=Network;OSINT;
+Exec=__HOME__/.local/share/wukong/scripts/kyc.sh
+Icon=__HOME__/.local/share/icons/wukong/wukong-kyc.png
+Terminal=false
