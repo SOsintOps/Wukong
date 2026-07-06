@@ -283,7 +283,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
     # PHASE 1: SYSTEM PREPARATION
     # ###############################################################
     echo "--- PHASE 1: System Preparation and Dependencies ---"
-    echo "    [ALEA IACTA EST] Machina configuratur. Hostes ignorant. Bene."
+    echo "    [師傅] Blade of Grass, before the guest arrives we sweep the house and align its chi."
 
     sudo apt update
 
@@ -426,7 +426,7 @@ FCITX5_EOF
     # PHASE 2: CORE APPLICATIONS
     # ###############################################################
     echo "--- PHASE 2: Core Applications ---"
-    echo "    [NOTA BENE] Applicationes parantur. Agens noster in umbra vigilat."
+    echo "    [師傅] Good tools are like good manners, Blade of Grass: invisible until the moment they are needed."
 
     # -- Firefox ESR: enterprise policies (privacy + OSINT bookmarks + extensions) --
     echo "--> Configuring Firefox ESR via policies.json..."
@@ -503,7 +503,7 @@ FCITX5_EOF
     # PHASE 3: OSINT TOOLS
     # ###############################################################
     echo "--- PHASE 3: OSINT Tools ---"
-    echo "    [CAVE] Plura instrumenta installantur quam nemo umquam usurus est. Hoc est OSINT."
+    echo "    [師傅] We gather more instruments than we will use, Blade of Grass. So does the wise physician."
 
     # -- 3a. pipx tools --
     echo "--> Installing tools via pipx..."
@@ -722,7 +722,7 @@ FCITX5_EOF
     # at runtime — see documents/CHINA_TOOLKIT.md.
     # ###############################################################
     echo "--- PHASE 3.5: Chinese OSINT Toolkit ---"
-    echo "    [SPECULATOR SINENSIS] Instrumenta Sinica parantur. 悟空 videt omnia."
+    echo "    [師傅] Where the crowd sees a wall, the master sees a door. 悟空 sees the hinge."
 
     # -- 3.5a. pipx tools (isolated) --
     echo "--> Installing Chinese OSINT tools via pipx..."
@@ -810,7 +810,7 @@ FCITX5_EOF
     # PHASE 4: LAUNCHERS AND SCRIPTS
     # ###############################################################
     echo "--- PHASE 4: Scripts and Launchers ---"
-    echo "    [FIAT LUX] Scripturae appositae. Agens iam cliccare potest sine terminali."
+    echo "    [師傅] The path is now laid with stones. Even without the terminal, the feet will find their way."
 
     # Install all scripts from repo (top-level .sh files)
     echo "--> Installing scripts from repo..."
@@ -930,7 +930,7 @@ FCITX5_EOF
     # (Skipped automatically if GNOME 40+ is not detected)
     # ###############################################################
     echo "--- PHASE 5: GNOME Look and Feel ---"
-    echo "    [QUAESTIO] Desktop ornatur. Quia etiam wukong aestheticam curat."
+    echo "    [師傅] A pleasing room calms the mind, and a calm mind sees what a busy one misses."
 
     # Use POSIX grep -o (no -P flag) for compatibility with minimal Debian installs
     GNOME_VERSION=$(gnome-shell --version 2>/dev/null | grep -o '[0-9]*' | head -1 || echo "0")
@@ -1003,7 +1003,7 @@ FCITX5_EOF
     # PHASE 6: FINAL CLEANUP
     # ###############################################################
     echo "--- PHASE 6: Finalizing and Cleaning Up ---"
-    echo "    [VALE] Operatio finita. Nunc speculate... vel somnum cape. Melius speculate."
+    echo "    [師傅] The tools are placed and their chi is good. Now the seeing begins. Miracles, Blade of Grass, carry a small surcharge."
 
     sudo apt update
     sudo apt upgrade -y
