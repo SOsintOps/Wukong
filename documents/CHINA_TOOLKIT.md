@@ -50,12 +50,16 @@ Build a **query in Chinese** before searching: official term + colloquial varian
 
 ### Social platforms
 
-- **MediaCrawler** ⭐ (`~/.local/share/wukong/programs/MediaCrawler`) — best coverage: Xiaohongshu, Douyin, Kuaishou, Bilibili, Weibo, Tieba, Zhihu. Config-driven with QR login; run from its venv. Recent versions ship a FastAPI WebUI. **This is the primary Xiaohongshu/RedNote tool.**
-- **weibo-crawler / weiboSpider** — Weibo posts/users; edit the config with your cookie, then run.
+Chinese social scrapers break often (front-end/signature changes, aggressive anti-scraping on RedNote in particular). Wukong therefore keeps **at least two independent tools per platform** — when one breaks, reach for the other.
+
+- **MediaCrawler** ⭐ (`~/.local/share/wukong/programs/MediaCrawler`) — best coverage: Xiaohongshu, Douyin, Kuaishou, Bilibili, Weibo, Tieba, Zhihu. Config-driven with QR login; run from its venv. Recent versions ship a FastAPI WebUI. **Primary multi-platform tool.**
+- **XHS-Downloader** (`~/.local/share/wukong/programs/XHS-Downloader`) — *second* Xiaohongshu/RedNote tool. Run `python main.py` (interactive TUI), or `python main.py api` / `python main.py mcp`. Cookie optional (improves quality). Use when MediaCrawler's XHS path is blocked.
+- **Douyin_TikTok_Download_API** (`~/.local/share/wukong/programs/Douyin_TikTok_Download_API`) — *second* Douyin/TikTok/Kuaishou/Bilibili downloader. Runs as a local FastAPI service (`python start.py`, docs at `/docs`) or via the `douyin-tiktok-scraper` library; supply a cookie/proxy in its config. Complements you-get + MediaCrawler for short video.
+- **weibo-crawler / weiboSpider** — Weibo posts/users; edit the config with your cookie, then run. (Weibo also via **snscrape** below → 3 independent Weibo paths.)
 - **snscrape** *(provisional)* — `snscrape --jsonl weibo-user <user>`. Fragile (HTML endpoints break on front-end changes).
 - **you-get** — `you-get --info <url>` then `you-get -o <dir> <url>`. Bilibili/Youku/Douyin/Weibo.
-- **BBDown** — `BBDown <BV-id|url>` for Bilibili (subs, 4K). Requires `dotnet`.
-- **we-mp-rss** — WeChat 公众号 → RSS/Markdown/PDF; needs a WeChat account.
+- **BBDown** — `BBDown <BV-id|url>` for Bilibili (subs, 4K). Requires `dotnet`. (Bilibili also via you-get → 2 paths.)
+- **we-mp-rss** — WeChat 公众号 → RSS/Markdown/PDF; needs a WeChat account. *Single tool* — WeChat has no reliable second CLI; fall back to **Sogou Weixin** (`weixin.sogou.com`) in the browser.
 
 ### Reverse image — web only (no reliable CLI)
 

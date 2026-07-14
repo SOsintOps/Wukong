@@ -74,7 +74,9 @@ The operational quick-reference (credentials, exact syntax, due-diligence steps)
 | Quake (360) | Cyberspace mapping — the third major CN engine | Quake API key |
 | ShuiZe (水泽) | Automated recon from a domain | optional engine keys |
 | MediaCrawler | Xiaohongshu/Douyin/Weibo/Bilibili/Kuaishou/Zhihu/Tieba | login (QR + real account) |
-| weibo-crawler / weiboSpider / snscrape | Weibo scraping | cookie/account |
+| XHS-Downloader | Xiaohongshu/RedNote (2nd tool) | cookie optional |
+| Douyin_TikTok_Download_API | Douyin/TikTok/Kuaishou download (2nd tool) | cookie |
+| weibo-crawler / weiboSpider / snscrape | Weibo scraping (3 tools) | cookie/account |
 | you-get / BBDown | Bilibili/Youku/Douyin media download | — |
 | we-mp-rss | WeChat 公众号 → RSS/PDF | WeChat account |
 | PyDork | Baidu-inclusive dorking | — |

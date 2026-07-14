@@ -874,6 +874,14 @@ FCITX5_EOF
     install_py_tool_from_git "https://github.com/0x727/ShuiZe_0x727"
     # MediaCrawler — Xiaohongshu/Douyin/Weibo/Bilibili/Kuaishou/Zhihu/Tieba (login QR)
     install_py_tool_from_git "https://github.com/NanmiCoder/MediaCrawler"
+    # XHS-Downloader — dedicated Xiaohongshu (RedNote) extractor/downloader.
+    # Second alternative to MediaCrawler for XHS (aggressive anti-scraping →
+    # having two independent tools matters). Run: 'python main.py' (TUI/api/mcp).
+    install_py_tool_from_git "https://github.com/JoeanAmier/XHS-Downloader"
+    # Douyin_TikTok_Download_API — Douyin/TikTok/Kuaishou/Bilibili downloader +
+    # FastAPI service. Second alternative to you-get/MediaCrawler for short video
+    # (needs a cookie; launch the API per documents/CHINA_TOOLKIT.md).
+    install_py_tool_from_git "https://github.com/Evil0ctal/Douyin_TikTok_Download_API"
     # weibo-crawler — Weibo scraper with media download (needs cookie)
     install_py_tool_from_git "https://github.com/dataabc/weibo-crawler"
     # we-mp-rss — WeChat 公众号 to RSS/Markdown/PDF (needs WeChat account)
