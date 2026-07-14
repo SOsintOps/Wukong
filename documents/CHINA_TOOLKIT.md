@@ -23,6 +23,8 @@ Three recurring access situations govern everything below:
 ## 1. Language layer (installed, no credentials needed)
 
 - **Type Chinese:** press **Ctrl+Space** to toggle `fcitx5` Pinyin. Configure engines with `fcitx5-configtool`; diagnose with `fcitx5-diagnose`. On GNOME/Wayland fcitx5 works through the GTK/Qt IM modules (env vars set in `/etc/environment`).
+- **Beyond Pinyin:** `fcitx5-rime` is installed — add **Cangjie/Wubi**, **Zhuyin/Bopomofo** (Taiwan) or **Jyutping** (Cantonese/HK) as extra input schemata in `fcitx5-configtool`. The Pinyin default is unchanged.
+- **Fonts:** Simplified + Traditional in both **Sans and Serif** come from `fonts-noto-cjk`; `fonts-unifont` is the last-resort fallback so rare hanzi (CJK Ext B/C/D) render as a glyph instead of a tofu box.
 - **Simplified ↔ Traditional:** `opencc -c s2t.json -i in.txt -o out.txt` (and `t2s.json` for the reverse).
 - **Offline dictionary:** `dict -d cc-cedict 你好`, or use GoldenDict-NG (GUI).
 - **Pinyin / segmentation (Python):** `python3 -c "import pypinyin,jieba"` — both from the Debian repo.
@@ -92,7 +94,29 @@ Rule: no single database is authoritative on everything. GSXT = legal ground-tru
 
 ---
 
-## 4. Source map (from the OSINT-in-China research)
+## 4. Network / egress (VPN + circumvention)
+
+Wukong installs the **clients**; the mainland-China endpoint, IP and configs are supplied by the analyst at runtime — **never committed, no credentials in the repo**. These make the workstation *appear* inside China (an environment/network posture), distinct from account-identity impersonation, which stays out of scope. OPSEC framing: this is the *pipe* toward a mainland endpoint (VPS in China / residential proxy), not the endpoint itself.
+
+### Neutral tier (Debian repos, installed via apt)
+
+- **WireGuard:** `wg-quick up <config>.conf` with a profile toward a Chinese endpoint. Simplest way to bring the **whole** VM onto a mainland IP.
+- **OpenVPN:** `openvpn --config <profile>.ovpn` — alternative when the endpoint only offers `.ovpn`.
+- **proxychains-ng:** route a **single** tool: `proxychains4 <command>`, with the proxy set in `/etc/proxychains4.conf` (or `~/.proxychains/proxychains.conf`). Useful to send only one scraper through a proxy without touching the rest.
+- **shadowsocks-libev:** lightweight Shadowsocks client (`ss-local`, `ss-redir`) — obfuscated tunnel from an `ss://` server you provide.
+
+### Circumvention tier (GitHub release binaries, in `/usr/local/bin`)
+
+- **Xray-core** (`xray`, modern v2ray-core / XTLS) and **mihomo** (`mihomo`, Clash.Meta) — anti-DPI tunnel engines. They need a server/config you supply (VLESS/VMess for Xray; a `config.yaml` for mihomo). They expose a **local SOCKS proxy** that you then feed to `proxychains4` or to the `http_proxy`/`https_proxy` env vars. Use them when a plain tunnel is actively blocked.
+- Verify after install: `xray version`, `mihomo -v`.
+
+**Technical honesty:** none of these gives you a Chinese IP on its own. The bottleneck is the mainland endpoint — scarce and often requiring a Chinese account/payment. The clients are the pipe; the exit is on you.
+
+**Legal / OPSEC:** making the machine *look* Chinese (layer 1) and exiting from a Chinese IP (layer 2) is legitimate. The line stays at account identity (layer 3): no impersonation of real people to obtain access.
+
+---
+
+## 5. Source map (from the OSINT-in-China research)
 
 - **Curated lists:** `paulpogoda/OSINT-Tools-China`, `OSINT-for-countries/OSINT_in_China`, `paulpogoda/OSINT-for-countries-V2.0`, `start.me/p/7kLY9R/osint-chine`, `cybdetective.com/osintmap`, `osint.place/china`.
 - **Guides:** Bellingcat *Challenges of OS Research on China* & *Xiaohongshu/RedNote*; OSINT Combine *The Chinese Internet*; GIJN *Investigating Chinese Companies*; All Source China; Project OSINT.
@@ -100,7 +124,7 @@ Rule: no single database is authoritative on everything. GSXT = legal ground-tru
 
 ---
 
-## 5. Known gaps / maintenance notes
+## 6. Known gaps / maintenance notes
 
 - **Command templates** for `china`/`kyc` in `config/tools.conf` are provisional — validate against each tool's `--help` on first run.
 - **Reverse image on Chinese engines** and **dedicated Sogou CLIs** have no reliable open-source tooling → browser only.

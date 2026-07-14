@@ -246,6 +246,78 @@ install_py_tool_from_git() {
 }
 
 
+# ---------------------------------------------------------------
+# HELPER: install_network_circumvention
+#   Circumvention tier of the network layer: Xray-core (modern
+#   v2ray-core, XTLS/Xray-core) + mihomo (Clash.Meta, MetaCubeX/mihomo)
+#   from GitHub release binaries into /usr/local/bin. Engine only —
+#   server/config and mainland endpoint are supplied by the analyst
+#   at runtime, never committed. Respects --dry-run.
+#   Uses echo + mark_ok/mark_fail (installer has no log_* helpers).
+# ---------------------------------------------------------------
+install_network_circumvention() {
+    echo "--> Installing circumvention engines (Xray-core + mihomo)..."
+
+    # --- architecture ---
+    local arch dl_arch
+    arch="$(uname -m)"
+    case "$arch" in
+        x86_64|amd64)  dl_arch="64" ;;        # Xray uses "64" for amd64
+        aarch64|arm64) dl_arch="arm64-v8a" ;;
+        *) echo "INFO: arch $arch unsupported for Xray/mihomo; skipping."
+           mark_fail "bin:xray"; mark_fail "bin:mihomo"; return 0 ;;
+    esac
+
+    if [ "$DRY_RUN" = "true" ]; then
+        echo "  [DRY-RUN] would download Xray-core + mihomo (arch $arch) into /usr/local/bin"
+        return 0
+    fi
+
+    local tmp; tmp="$(mktemp -d)"
+
+    # --- Xray-core (XTLS/Xray-core) — stable asset name Xray-linux-<arch>.zip ---
+    local xray_url="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-${dl_arch}.zip"
+    if curl -fsSL "$xray_url" -o "$tmp/xray.zip"; then
+        unzip -o "$tmp/xray.zip" -d "$tmp/xray" >/dev/null
+        install -m 0755 "$tmp/xray/xray" /usr/local/bin/xray
+        echo "    xray installed: $(/usr/local/bin/xray version 2>/dev/null | head -1)"
+        mark_ok "bin:xray"
+    else
+        echo "WARNING: Xray-core download failed (network/asset name?), skipping."
+        mark_fail "bin:xray"
+    fi
+
+    # --- mihomo (MetaCubeX/mihomo, Clash.Meta) ---
+    # Asset uses amd64/arm64 and carries the version in the filename, so the
+    # 'latest' tag is resolved via the API and the URL is built from it.
+    # grep -oE (not -oP) to match the installer's minimal-grep convention.
+    local mh_arch mh_tag mh_url
+    case "$arch" in
+        x86_64|amd64)  mh_arch="amd64" ;;
+        aarch64|arm64) mh_arch="arm64" ;;
+    esac
+    mh_tag="$(curl -fsSL https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+              | grep -oE '"tag_name":[[:space:]]*"[^"]+"' | head -1 | cut -d'"' -f4)"
+    if [ -n "$mh_tag" ]; then
+        mh_url="https://github.com/MetaCubeX/mihomo/releases/download/${mh_tag}/mihomo-linux-${mh_arch}-${mh_tag}.gz"
+        if curl -fsSL "$mh_url" -o "$tmp/mihomo.gz"; then
+            gunzip -f "$tmp/mihomo.gz"
+            install -m 0755 "$tmp/mihomo" /usr/local/bin/mihomo
+            echo "    mihomo installed: $(/usr/local/bin/mihomo -v 2>/dev/null | head -1)"
+            mark_ok "bin:mihomo"
+        else
+            echo "WARNING: mihomo download failed (asset name?), skipping."
+            mark_fail "bin:mihomo"
+        fi
+    else
+        echo "WARNING: could not resolve mihomo tag via API, skipping."
+        mark_fail "bin:mihomo"
+    fi
+
+    rm -rf "$tmp"
+}
+
+
 # ===============================================================
 # PRE-FLIGHT CHECKS
 # ===============================================================
@@ -323,10 +395,18 @@ exec > >(tee -a "$LOG_FILE") 2>&1
         fonts-arphic-ukai fonts-arphic-uming
         fonts-arphic-gbsn00lp fonts-arphic-gkai00mp
         fonts-wqy-zenhei fonts-wqy-microhei
+        # Unifont: last-resort glyph coverage for rare hanzi (CJK Ext B/C/D)
+        # so obscure characters render as a real glyph instead of tofu boxes.
+        # (Noto Serif CJK is already provided by fonts-noto-cjk above.)
+        fonts-unifont
         # --- Chinese: input method (fcitx5 full stack: Pinyin/Shuangpin/tables) ---
         fcitx5 fcitx5-chinese-addons fcitx5-table-extra fcitx5-config-qt
         fcitx5-frontend-gtk3 fcitx5-frontend-gtk4
         fcitx5-frontend-qt5 fcitx5-frontend-qt6 im-config
+        # Rime engine: extra schemata beyond Pinyin — Cangjie/Wubi, Zhuyin/
+        # Bopomofo (Taiwan) and Jyutping (Cantonese/HK). Selectable in
+        # fcitx5-configtool; the pre-configured Pinyin default stays unchanged.
+        fcitx5-rime
         # --- Chinese: offline dictionaries + Simplified<->Traditional conversion ---
         goldendict-ng stardict stardict-tools
         dictd dict dict-cc-cedict
@@ -341,6 +421,14 @@ exec > >(tee -a "$LOG_FILE") 2>&1
         # OSINT system tools
         default-jre httrack webhttrack libimage-exiftool-perl
         mediainfo-gui mat2 subversion
+        # --- Network layer: generic VPN + proxy routing (Debian repos) ---
+        # The "neutral" egress tier. These are the pipe toward a mainland
+        # endpoint, not the endpoint itself — configs/IP supplied at runtime.
+        # wireguard-tools: wg / wg-quick    | openvpn: .ovpn client
+        # proxychains4: per-command SOCKS/HTTP routing (real pkg; 'proxychains-ng'
+        #   is only a virtual name it provides — installing the real one is safer)
+        # shadowsocks-libev: lightweight Shadowsocks client (ss-local, ss-redir)
+        wireguard-tools openvpn proxychains4 shadowsocks-libev
         # Desktop / utilities
         zenity kazam bleachbit libxcb-cursor0 docker.io evince
         # GNOME extensions
@@ -800,6 +888,11 @@ FCITX5_EOF
         echo "INFO: dotnet not present; skipping BBDown (install dotnet-sdk to enable)."
         mark_fail "dotnet:BBDown"
     fi
+
+    # -- 3.5f. Network / egress layer — circumvention engines --
+    # Neutral tier (WireGuard/OpenVPN/proxychains4/shadowsocks-libev) is in
+    # the Phase 1 apt list. This installs the anti-DPI engines from release.
+    install_network_circumvention
 
     # Refresh PATH after Chinese-tool installs
     REAL_GOPATH=$(run_as_user go env GOPATH 2>/dev/null || echo "$REAL_HOME/go")

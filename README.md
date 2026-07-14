@@ -60,8 +60,8 @@ The operational quick-reference (credentials, exact syntax, due-diligence steps)
 
 ### Language & culture (all from official Debian repos)
 
-- **Fonts:** `fonts-noto-cjk` (+extra), Arphic Kai/Ming (`fonts-arphic-*`), WQY fallback, colour emoji — renders Simplified **and** Traditional correctly.
-- **Input method:** `fcitx5` + `fcitx5-chinese-addons` (Pinyin/Shuangpin) + tables, pre-configured with a US-keyboard + Pinyin profile. Toggle with **Ctrl+Space**.
+- **Fonts:** `fonts-noto-cjk` (+extra) — which ships **both** Sans *and* Serif CJK — Arphic Kai/Ming (`fonts-arphic-*`), WQY fallback, `fonts-unifont` (last-resort glyphs for rare CJK Ext B/C/D hanzi, no tofu), colour emoji — renders Simplified **and** Traditional correctly.
+- **Input method:** `fcitx5` + `fcitx5-chinese-addons` (Pinyin/Shuangpin) + tables + `fcitx5-rime` (Cangjie, Zhuyin/Bopomofo, Jyutping/Cantonese), pre-configured with a US-keyboard + Pinyin profile. Toggle with **Ctrl+Space**; extra Rime schemata are selectable in `fcitx5-configtool`.
 - **Locales:** `zh_CN.UTF-8` and `zh_TW.UTF-8` enabled (system UI stays English/Italian).
 - **Dictionaries & conversion:** GoldenDict-NG, StarDict, CC-CEDICT (offline), OpenCC, `python3-pypinyin`, `python3-jieba`.
 
@@ -89,6 +89,10 @@ The operational quick-reference (credentials, exact syntax, due-diligence steps)
 | Cninfo | Official filings for listed companies |
 
 Full credential setup, exact command syntax and the step-by-step due-diligence workflow are in [`documents/CHINA_TOOLKIT.md`](documents/CHINA_TOOLKIT.md).
+
+### Network / egress layer
+
+Generic VPN clients (WireGuard, OpenVPN), `proxychains-ng` for per-command SOCKS routing, and circumvention engines (`shadowsocks-libev`, Xray-core, mihomo). Wukong installs the clients; the mainland-China endpoint and configs are supplied by the analyst at runtime, never committed. These make the workstation *appear* inside China — an environment/network posture, distinct from account-identity impersonation, which stays out of scope.
 
 ## Architecture
 
