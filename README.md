@@ -33,13 +33,16 @@ Wukong keeps the full general-purpose OSINT arsenal of Speculator and adds three
 ## Installation
 
 ```bash
-git clone https://github.com/SOsintOps/Wukong.git && cd Wukong && sudo ./wukong_install.sh
+git clone https://github.com/SOsintOps/Wukong.git && cd Wukong && chmod +x wukong_install.sh && sudo ./wukong_install.sh
 ```
+
+The `chmod +x` makes the script executable — needed if you downloaded the ZIP
+(archives drop Unix permissions) or cloned without the executable bit.
 
 Simulate without changing the system:
 
 ```bash
-sudo ./wukong_install.sh --dry-run
+chmod +x wukong_install.sh && sudo ./wukong_install.sh --dry-run
 ```
 
 After installation, reboot so the fonts, locales and `fcitx5` input method load cleanly.
