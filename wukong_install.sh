@@ -33,6 +33,15 @@ done
 
 
 # ---------------------------------------------------------------
+# NON-INTERACTIVE GIT
+# Never prompt for credentials on clone. A removed, renamed or private
+# repo then fails fast (and is marked FAIL) instead of hanging the whole
+# install on a "Username for 'https://github.com':" prompt.
+# ---------------------------------------------------------------
+export GIT_TERMINAL_PROMPT=0
+
+
+# ---------------------------------------------------------------
 # USER DETECTION (sudo-safe)
 # When invoked via sudo, target the invoking user, not root.
 # ---------------------------------------------------------------
@@ -774,18 +783,8 @@ FCITX5_EOF
     # -- 3h. WireTapper (wireless/cellular network OSINT, requires API keys) --
     install_py_tool_from_git "https://github.com/h9zdev/WireTapper" "WireTapper.txt"
 
-    # -- 3i. TLDSweep (domain TLD sweep, stdlib only — no requirements) --
-    echo "--> Cloning TLDSweep..."
-    if [ ! -d "$PROGRAMS_DIR/TLDSweep" ]; then
-        if run_as_user git clone "https://github.com/DarkWebInformer/TLDSweep.git" "$PROGRAMS_DIR/TLDSweep"; then
-            mark_ok "git:TLDSweep"
-        else
-            echo "WARNING: TLDSweep clone failed."
-            mark_fail "git:TLDSweep"
-        fi
-    else
-        mark_ok "git:TLDSweep"
-    fi
+    # -- 3i. TLDSweep — REMOVED: upstream repo DarkWebInformer/TLDSweep is gone
+    #    (HTTP 404 as of 2026-07-14). Dropped to avoid a guaranteed-failing clone.
 
     # -- 3j. Turbolehe (email variant generator for holehe; stdlib only — no requirements) --
     echo "--> Cloning Turbolehe..."
