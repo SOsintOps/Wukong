@@ -833,11 +833,40 @@ FCITX5_EOF
         fi
     done
 
-    # -- 3.5b. Go-based cyberspace tools (FOFA) --
+    # -- 3.5b. Cyberspace mapping engines (FOFA + Quake) --
     echo "--> Installing Go-based Chinese cyberspace tools..."
     export GOTOOLCHAIN=auto
     tracked "go:fofax"  run_as_user go install -v "github.com/xiecat/fofax@latest"
     tracked "go:gofofa" run_as_user go install -v "github.com/FofaInfo/GoFOFA/cmd/gofofa@latest"
+
+    # Quake (360) — the third major Chinese cyberspace engine alongside FOFA
+    # and ZoomEye. quake_rs is the maintained Rust CLI; installed from the
+    # release binary (x86_64-only asset). Needs a Quake API token at runtime:
+    # 'quake init <apikey>' — see documents/CHINA_TOOLKIT.md.
+    echo "--> Installing Quake CLI (360 quake_rs release binary)..."
+    if [ "$DRY_RUN" = "true" ]; then
+        echo "  [DRY-RUN] would download quake_rs (x86_64) into ~/.local/bin/quake"
+    elif [ "$(uname -m)" = "x86_64" ]; then
+        # Download + extract + install all as the real user (mktemp is user-owned,
+        # so tar can write into it); the URL is a literal inside the user shell.
+        if run_as_user bash -c '
+            set -e
+            t="$(mktemp -d)"
+            curl -fsSL "https://github.com/360quake/quake_rs/releases/latest/download/quake-x86_64-unknown-linux-gnu.tar.gz" -o "$t/quake.tar.gz"
+            tar -xzf "$t/quake.tar.gz" -C "$t"
+            b="$(find "$t" -type f -name quake | head -1)"
+            [ -n "$b" ] && install -m 0755 "$b" "$HOME/.local/bin/quake"
+            rm -rf "$t"
+        '; then
+            mark_ok "bin:quake"
+        else
+            echo "WARNING: Quake CLI install failed (network/asset name?)."
+            mark_fail "bin:quake"
+        fi
+    else
+        echo "INFO: Quake release is x86_64-only; skipping on $(uname -m)."
+        mark_fail "bin:quake"
+    fi
 
     # -- 3.5c. Python tools from Git (isolated venvs) --
     echo "--> Installing Chinese OSINT tools from Git..."

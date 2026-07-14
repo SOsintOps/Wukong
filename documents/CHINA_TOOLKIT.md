@@ -42,6 +42,7 @@ Build a **query in Chinese** before searching: official term + colloquial varian
 - **Fofax** *(provisional)* — `fofax -q 'domain="example.com"'`. Manifest runs `fofax -q {target}`; wrap the target in FOFA syntax for best results. Configure key in `~/.config/fofax/fofax.yaml`.
 - **GoFOFA** — `gofofa` official CLI (batch, cert→domain, icon-hash). Config holds the FOFA key.
 - **fofa-py** — `fofa` Python SDK/CLI.
+- **Quake (360)** *(provisional)* — the third major Chinese cyberspace engine (360's, alongside FOFA and ZoomEye). Installed as the `quake` binary (maintained `quake_rs`). Set the key once with `quake init <apikey>` (from your Quake 个人中心), then `quake search '<query>'`. Manifest runs `quake search {target}`; verify flags with `quake --help` on first run. Get an API key at [quake.360.net](https://quake.360.net/).
 
 ### Search & dorking (no key)
 

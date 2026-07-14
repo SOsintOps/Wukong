@@ -71,6 +71,7 @@ The operational quick-reference (credentials, exact syntax, due-diligence steps)
 |------|---------|-------|
 | Kunyu / ZoomEye CLI | Cyberspace asset recon | ZoomEye API key |
 | Fofax / GoFOFA / fofa-py | FOFA ("Chinese Shodan") queries | FOFA API key |
+| Quake (360) | Cyberspace mapping — the third major CN engine | Quake API key |
 | ShuiZe (水泽) | Automated recon from a domain | optional engine keys |
 | MediaCrawler | Xiaohongshu/Douyin/Weibo/Bilibili/Kuaishou/Zhihu/Tieba | login (QR + real account) |
 | weibo-crawler / weiboSpider / snscrape | Weibo scraping | cookie/account |
