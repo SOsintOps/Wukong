@@ -130,7 +130,7 @@ Wukong is for **authorised** open-source research, journalism, and corporate due
 ## Credits
 
 - Built on the [Speculator Project](https://github.com/SOsintOps/Speculator-Project) by SOsintOps.
-- China methodology draws on the thesis *"Analisi e Prospettive dell'OSINT in Cina"* (A. Rossetti, Ca' Foscari, unpublished) and on published work by [Bellingcat](https://www.bellingcat.com/resources/2023/04/18/china-challenges-open-source-osint-social-media/), [OSINT Combine](https://www.osintcombine.com/post/osint-the-chinese-internet), [GIJN](https://gijn.org/resource/asia-focus-open-source-guide-investigating-chinese-companies/), All Source China and [Project OSINT](https://projectosint.substack.com/p/osint-chinese-companies); the analytic method is the shared [Intelligence Field Notes](https://github.com/SOsintOps/intelligence-field-notes).
+- China methodology draws on the thesis *"Analisi e Prospettive dell'OSINT in Cina"* (A. Rossetti, Ca' Foscari, unpublished) and on published work by [Bellingcat](https://www.bellingcat.com/resources/2023/04/18/china-challenges-open-source-osint-social-media/), [OSINT Combine](https://www.osintcombine.com/post/osint-the-chinese-internet), [GIJN](https://gijn.org/resource/asia-focus-open-source-guide-investigating-chinese-companies/), [All Source China](https://allsourcechina.com/tools-for-china-osint/) and [Project OSINT](https://projectosint.substack.com/p/osint-chinese-companies); the analytic method is the shared [Intelligence Field Notes](https://github.com/SOsintOps/intelligence-field-notes).
 - Developed with a "vibe coding" workflow assisted by various large language models (LLMs), with human review and validation. See the [FAQ](documentation/04-faq.md#how-was-this-project-built).
 
 ## License
