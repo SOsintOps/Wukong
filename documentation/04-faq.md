@@ -45,7 +45,11 @@ or VPN where appropriate, no logging into personal accounts).
 
 Preserve sources (screenshots, archived copies, hashes), record timestamps, note
 how each fact was obtained, and corroborate across independent sources. A finding
-you can't reproduce or attribute is not intelligence — it's a rumour.
+you can't reproduce or attribute is not intelligence — it's a rumour. Grade every
+item with the UNODC 4 x 4 system (source A, B, C or X; information 1 to 4); the
+[Intelligence Field Notes](field-notes/README.md) explain how, and
+[05 — Analysis & Reporting](05-analysis-and-reporting.md#evaluating-chinese-sources)
+how it applies to Chinese registers, state media and platforms.
 
 ---
 
@@ -116,6 +120,22 @@ Many Chinese platforms actively block scrapers and prohibit it in their terms.
 Stick to public data, keep collection minimal, and treat platform terms and local
 law as real constraints — not obstacles to route around.
 
+### Can I trust a machine translation?
+
+To orient yourself, yes; to conclude, no. Go back to the original characters on
+every passage a finding rests on, watch for euphemisms that a translator renders
+literally, and keep the original next to your translation in the report. See
+[05 — Analysis & Reporting](05-analysis-and-reporting.md#translation-is-a-processing-step).
+
+### How should a report on a Chinese target be written?
+
+As any intelligence report — bottom line first, facts apart from judgements, every
+source graded — with quotations in both languages, names in characters and pinyin
+at first mention, the state actor named precisely, and the language and access
+limits stated in the method section. See
+[05 — Analysis & Reporting](05-analysis-and-reporting.md#the-report) and the common
+[Report Writing](field-notes/report-writing.md) guide.
+
 ---
 
 ## About this project
@@ -140,6 +160,18 @@ development assisted by **various large language models (LLMs)** for scaffolding
 research synthesis, and documentation, with human review and validation of the
 tooling and command syntax. The methodology and source research come from prior
 human work on OSINT in China (see [02 — Source Material & Context](02-source-material.md)).
+
+### Are there related SOsintOps projects?
+
+Yes:
+
+- [Speculator](https://github.com/SOsintOps/Speculator-Project) is the Debian workstation Wukong forks; its report templates work for Wukong cases too.
+- [Argos](https://github.com/SOsintOps/Argos) is the same idea on Ubuntu Budgie.
+- [Quaesitor](https://github.com/SOsintOps/quaesitor) is the case graph under **Frameworks**, which keeps a name in characters and its pinyin as one node.
+- [Exploratores](https://github.com/SOsintOps/Exploratores) is the browser toolkit; China is on its country-sources roadmap.
+- [Aethelburg](https://github.com/SOsintOps/Aethelburg-project) does for UK companies what the KYC layer does for Chinese ones.
+- [Elementary CTI](https://github.com/SOsintOps/elementary-CTI) tracks ransomware actors, some of them Chinese-speaking.
+- The [Intelligence Field Notes](https://github.com/SOsintOps/intelligence-field-notes) hold the method all of them share.
 
 ### Does Wukong guarantee every tool works out of the box?
 

@@ -8,15 +8,17 @@ nobody mistakes "installed" for "proven to run".
 
 ## The analysed texts
 
-All source material lives under `Speculator-Project/materiale cina/` (kept in the
-origin project, not copied into this repo). Three bodies of material were analysed.
+The source material is not part of this repository: the thesis is unpublished and
+the Telegram export and research notes are working files. Three bodies of material
+were analysed.
 
-### 1. Primary source — the thesis (fonte primaria)
+### 1. Primary source — the thesis
 
 *"Analisi e Prospettive dell'OSINT in Cina — Dalla ricerca delle fonti
-all'applicazione reale"* — Alessandro Rossetti, matricola 767581, A.A. 2024/2025,
-Università Ca' Foscari, Lingue e Letterature Orientali. 116 pages, bilingual
-IT + 中文. Nine chapters:
+all'applicazione reale"* (*Analysis and Prospects of OSINT in China: from source
+research to real-world application*) — Alessandro Rossetti, academic year 2024/2025,
+Ca' Foscari University of Venice, Oriental Languages and Literatures. 116 pages,
+in Italian and Chinese (中文); unpublished. Nine chapters:
 
 | Ch. | Topic |
 |-----|-------|
@@ -32,7 +34,11 @@ IT + 中文. Nine chapters:
 
 The thesis is the methodological backbone: the three-layer design of Wukong
 (language, sinophone OSINT, KYC) maps directly onto its chapters 2–3 (barriers &
-platforms), 4–6 (method & tooling), and 7 (the corporate/KYC case studies).
+platforms), 4–6 (method & tooling), and 7 (the corporate/KYC case studies). Its
+chapters 4 and 5 on intelligence fundamentals, source validation and BLUF writing
+are the basis of [05 — Analysis & Reporting](05-analysis-and-reporting.md), which
+applies the common [Intelligence Field Notes](https://github.com/SOsintOps/intelligence-field-notes)
+to Chinese sources.
 
 ### 2. Secondary source — the Cyber Detective channel
 
@@ -46,8 +52,10 @@ snscrape, Baidu/Sogou reverse image, MediaCrawler, ENScan_GO, …) that Wukong i
 Fresh web research validated the tool inventory against the live state of the art
 and added the legal context. Key confirmations:
 
-- **ENScan_GO** ([wgpsec](https://github.com/wgpsec/ENScan_GO)) is actively
-  maintained, with an MCP mode for AI orchestration.
+- **ENScan_GO** (wgpsec) was actively maintained in July 2026, with an MCP mode
+  for AI orchestration. **Update, October 2026:** the `wgpsec/ENScan_GO`
+  repository no longer exists (GitHub returns 404), so the installer step that
+  clones it fails; a replacement source is still to be chosen.
 - **MediaCrawler** ([NanmiCoder](https://github.com/NanmiCoder/MediaCrawler)) is
   the reference multi-platform social crawler, now with a WebUI.
 - **KYC:** GSXT is the free official ground-truth; TianYanCha / QCC are ~95%

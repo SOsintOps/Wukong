@@ -124,7 +124,7 @@ Wukong installs the **clients**; the mainland-China endpoint, IP and configs are
 ## 5. Source map (from the OSINT-in-China research)
 
 - **Curated lists:** `paulpogoda/OSINT-Tools-China`, `OSINT-for-countries/OSINT_in_China`, `paulpogoda/OSINT-for-countries-V2.0`, `start.me/p/7kLY9R/osint-chine`, `cybdetective.com/osintmap`, `osint.place/china`.
-- **Guides:** Bellingcat *Challenges of OS Research on China* & *Xiaohongshu/RedNote*; OSINT Combine *The Chinese Internet*; GIJN *Investigating Chinese Companies*; All Source China; Project OSINT.
+- **Guides:** Bellingcat [*The Challenges of Conducting Open Source Research on China*](https://www.bellingcat.com/resources/2023/04/18/china-challenges-open-source-osint-social-media/) & [*Xiaohongshu (RedNote)*](https://www.bellingcat.com/resources/2026/04/20/xiaohongshu-rednote-open-source-guide/); OSINT Combine [*OSINT: The Chinese Internet*](https://www.osintcombine.com/post/osint-the-chinese-internet); GIJN [*Open Source Guide to Investigating Chinese Companies*](https://gijn.org/resource/asia-focus-open-source-guide-investigating-chinese-companies/); All Source China; [Project OSINT](https://projectosint.substack.com/p/osint-chinese-companies). Method: [05 — Analysis & Reporting](../documentation/05-analysis-and-reporting.md).
 - **Courses:** OSINT Combine Redbook, EPCyber (china-osint.com), i-intelligence, SANS SEC587.
 
 ---

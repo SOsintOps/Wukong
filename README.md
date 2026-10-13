@@ -1,6 +1,6 @@
 # Wukong (悟空)
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Version](https://img.shields.io/badge/version-0.1.1-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![OS](https://img.shields.io/badge/OS-Debian%2013%20Trixie-red)
 ![Shell](https://img.shields.io/badge/shell-bash-yellow)
@@ -55,6 +55,9 @@ Full documentation lives in [`documentation/`](documentation/README.md):
 - [Source Material & Context](documentation/02-source-material.md) — the texts analysed (thesis, Cyber Detective channel, online research) and what is / isn't yet verified.
 - [FAQ](documentation/04-faq.md) — OSINT, China OSINT, and this project.
 - [Methodology & Legal](documentation/03-methodology-and-legal.md) — access prerequisites, the KYC workflow, and the legal/OPSEC context.
+- [Analysis & Reporting](documentation/05-analysis-and-reporting.md) — evaluating Chinese sources, translation, names and romanisation, writing about the Chinese state, the report.
+- [Intelligence Field Notes](documentation/field-notes/README.md) — offline copy of the analytic method shared by the SOsintOps tools.
+- [Version history](documentation/versionhistory.md) — the releases of Wukong.
 - [Tools index](documentation/tools/README.md) — **one page per China-specific tool** (install, access, usage, caveats).
 
 The operational quick-reference (credentials, exact syntax, due-diligence steps) remains in [`documents/CHINA_TOOLKIT.md`](documents/CHINA_TOOLKIT.md).
@@ -127,7 +130,7 @@ Wukong is for **authorised** open-source research, journalism, and corporate due
 ## Credits
 
 - Built on the [Speculator Project](https://github.com/SOsintOps/Speculator-Project) by SOsintOps.
-- China methodology draws on the thesis *"Analisi e Prospettive dell'OSINT in Cina"* (A. Rossetti, Ca' Foscari) and on published work by Bellingcat, OSINT Combine, GIJN, All Source China and Project OSINT.
+- China methodology draws on the thesis *"Analisi e Prospettive dell'OSINT in Cina"* (A. Rossetti, Ca' Foscari, unpublished) and on published work by [Bellingcat](https://www.bellingcat.com/resources/2023/04/18/china-challenges-open-source-osint-social-media/), [OSINT Combine](https://www.osintcombine.com/post/osint-the-chinese-internet), [GIJN](https://gijn.org/resource/asia-focus-open-source-guide-investigating-chinese-companies/), All Source China and [Project OSINT](https://projectosint.substack.com/p/osint-chinese-companies); the analytic method is the shared [Intelligence Field Notes](https://github.com/SOsintOps/intelligence-field-notes).
 - Developed with a "vibe coding" workflow assisted by various large language models (LLMs), with human review and validation. See the [FAQ](documentation/04-faq.md#how-was-this-project-built).
 
 ## License

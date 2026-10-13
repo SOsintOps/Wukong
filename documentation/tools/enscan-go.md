@@ -1,7 +1,7 @@
 # ENScan_GO
 
 **Category:** kyc (in manifest) · **Install:** git clone + `go build` → `enscan` · **Access:** platform cookies
-**Source:** <https://github.com/wgpsec/ENScan_GO>
+**Source:** <https://github.com/wgpsec/ENScan_GO> (no longer available: the repository returns 404 since October 2026; see the [version history](../versionhistory.md))
 
 ## What it is
 
