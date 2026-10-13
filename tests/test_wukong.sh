@@ -116,6 +116,29 @@ _test "kyc.sh sources common.sh"     "1" "$(grep -c '^source.*common.sh' "$kyc_s
 _test "kyc.sh calls run_category kyc" "true" "$(grep -q 'run_category "kyc"' "$kyc_sh" && echo true || echo false)"
 
 ###############################################################################
+echo ""
+echo "── 6. Frameworks: Quaesitor and Flowsint ──"
+###############################################################################
+
+load_manifest "frameworks"
+_test "frameworks tool count = 6" "6" "${#_MF_IDS[@]}"
+_test "frameworks has quaesitor" "Quaesitor" "${_MF_NAME[quaesitor]:-missing}"
+_test "frameworks has flowsint" "Flowsint" "${_MF_NAME[flowsint]:-missing}"
+_test "manifest_tool_ready exists" "function" "$(type -t manifest_tool_ready)"
+installer="$SCRIPT_DIR/wukong_install.sh"
+for _t in quaesitor flowsint; do
+  _test "scripts/$_t.sh exists and is executable" "true" "$([ -x "$SCRIPT_DIR/scripts/$_t.sh" ] && echo true || echo false)"
+  _test "installer clones $_t" "true" "$(grep -qE "/$_t(\\.git)?\"" "$installer" && echo true || echo false)"
+done
+for _pkg in tesseract-ocr tesseract-ocr-chi-sim tesseract-ocr-chi-tra python3-icu; do
+  _test "installer package list has $_pkg (Quaesitor OCR/transliteration)" "true"     "$(grep -qE "(^|[[:space:]])$_pkg([[:space:]]|$)" "$installer" && echo true || echo false)"
+done
+_test "installer installs the manifest next to the scripts" "true" \
+  "$(grep -q 'cp "$_REPO_DIR/config/tools.conf" "$REAL_HOME/.local/share/wukong/config/tools.conf"' "$installer" && echo true || echo false)"
+_test "frameworks.sh launches in the foreground (launch_framework)" "true" \
+  "$(grep -q '^launch_framework()' "$SCRIPT_DIR/scripts/frameworks.sh" && echo true || echo false)"
+
+###############################################################################
 # Summary
 ###############################################################################
 echo ""

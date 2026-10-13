@@ -72,6 +72,12 @@ main() {
       [ ! -d "$dir/.git" ] && continue
       local name; name=$(basename "$dir")
       local before after pull_out
+      # A clone checked out at a release tag (Flowsint) has nothing to pull:
+      # the installer moves it to the newest release.
+      if ! git -C "$dir" symbolic-ref -q HEAD >/dev/null 2>&1; then
+        log_step "$name" "skip" " (pinned to a release: run the installer to update)"
+        ((skipped++)); continue
+      fi
       before=$(git -C "$dir" rev-parse HEAD 2>/dev/null)
       if pull_out=$(git -C "$dir" pull --ff-only 2>&1); then
         after=$(git -C "$dir" rev-parse HEAD 2>/dev/null)

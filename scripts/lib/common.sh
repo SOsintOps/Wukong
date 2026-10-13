@@ -294,6 +294,16 @@ _avail() {
   esac
 }
 
+# manifest_tool_ready ID: true when the tool of a loaded manifest entry is
+# installed (repository folder present, or command on PATH).
+manifest_tool_ready() {
+  local cv="${_MF_CHECK_VAL[$1]}"
+  case "${_MF_CHECK_TYPE[$1]}" in
+    repo) [ -d "$PROGRAMS_DIR/$cv" ] ;;
+    *)    tool_available "$cv" ;;
+  esac
+}
+
 check_required_tools() {
   local -a req=("$@")
   local -a missing_list=()

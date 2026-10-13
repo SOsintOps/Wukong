@@ -67,6 +67,14 @@ The operational quick-reference (credentials, exact syntax, due-diligence steps)
 - **Input method:** `fcitx5` + `fcitx5-chinese-addons` (Pinyin/Shuangpin) + tables + `fcitx5-rime` (Cangjie, Zhuyin/Bopomofo, Jyutping/Cantonese), pre-configured with a US-keyboard + Pinyin profile. Toggle with **Ctrl+Space**; extra Rime schemata are selectable in `fcitx5-configtool`.
 - **Locales:** `zh_CN.UTF-8` and `zh_TW.UTF-8` enabled (system UI stays English/Italian).
 - **Dictionaries & conversion:** GoldenDict-NG, StarDict, CC-CEDICT (offline), OpenCC, `python3-pypinyin`, `python3-jieba`.
+- **OCR & transliteration:** Tesseract with the Simplified and Traditional Chinese, Italian, Russian and Arabic language packs, and ICU (`python3-icu`) for turning non-Latin names into Latin script; both are used by Quaesitor (see below).
+
+### Case graphs (Frameworks)
+
+Two graph tools sit in the **Frameworks** launcher, next to Recon-ng, sn0int, Changedetection.io and Maigret Web:
+
+- [**Quaesitor**](https://github.com/SOsintOps/quaesitor) on `http://127.0.0.1:5002`: the case as a graph of people, phones, e-mails, profiles, companies and documents. A name in Chinese characters and its pinyin form stay one node; scanned documents are read with OCR; Follow the Money datasets can be imported. The archive lives in `~/Downloads/evidence/quaesitor`, and nothing leaves the computer unless an online lookup is switched on.
+- [**Flowsint**](https://github.com/reconurge/flowsint) on `http://127.0.0.1:5173`: graph investigation platform with enrichers, run from its Docker images at the latest release; create your account at `/register` on the first visit. The installer adds your user to the `docker` group (active after the reboot) and keeps the generated passwords in `~/.config/wukong/flowsint.env`: never delete that file, the databases are initialised with it.
 
 ### Sinophone OSINT tools
 
@@ -107,6 +115,7 @@ Wukong inherits Speculator's **hub-and-spoke** design:
 - `scripts/user.sh` — hub for person-tracking (email, username, fullname, phone, hash)
 - Spokes — one script per investigation type: `domain.sh`, `instagram.sh`, `video.sh`, … plus the new **`china.sh`** (Sinophone OSINT) and **`kyc.sh`** (Chinese due diligence)
 - `config/tools.conf` — pipe-delimited manifest; adding a tool is a one-line entry
+- `scripts/frameworks.sh` — interactive tools (Recon-ng, sn0int, Changedetection.io, Maigret Web, Quaesitor, Flowsint), each run in its own terminal
 - `scripts/lib/common.sh` — shared library (tool execution, Zenity UI, session logging, evidence output)
 
 Evidence is written to `~/Downloads/evidence/{target}/`. Tools install to `~/.local/share/wukong/programs/`.

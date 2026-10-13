@@ -122,7 +122,7 @@ These are documented in the Speculator project; summarised here by category:
 | Video | yt-dlp, Streamlink, Gallery-DL |
 | Archives | Waybackpy, Waybackpack, Internetarchive, ArchiveBox |
 | Image / metadata | Exiftool, Mat2, Xeuledoc, Carbon14, Mediainfo |
-| Frameworks | Recon-NG, sn0int, changedetection.io, Maigret Web |
+| Frameworks | Recon-NG, sn0int, changedetection.io, Maigret Web, Quaesitor (case graph, port 5002), Flowsint (Docker, port 5173) |
 
 The point of Wukong is that these run **alongside** the China layer: an analyst
 can pivot from a Chinese company (KYC) to its domains (`domain.sh`) to the people

@@ -1,7 +1,7 @@
 # Wukong (悟空) — Documentation
 
 Documentation for **Wukong**, a China-focused OSINT workstation built as a
-standalone fork of the [Speculator Project](https://github.com/SOsintOps/Speculator).
+standalone fork of the [Speculator Project](https://github.com/SOsintOps/Speculator-Project).
 Wukong turns a clean Debian 13 "Trixie" VM into an environment for investigating
 the Chinese-language internet and performing Chinese corporate due diligence.
 
@@ -37,8 +37,8 @@ Wukong, and its caveats.
 The tool pages document the **China-specific** additions — the part that makes
 Wukong distinct. Wukong also inherits Speculator's full general-purpose OSINT
 arsenal (email, username, phone, hash, domain, social, video, archives, image,
-frameworks); those tools are covered by
-[Speculator's own documentation](https://github.com/SOsintOps/Speculator) and are
+frameworks, including the Quaesitor and Flowsint case graphs); those tools are covered by
+[Speculator's own documentation](https://github.com/SOsintOps/Speculator-Project) and are
 summarised in the [project overview](01-project-overview.md#inherited-arsenal).
 
 ---

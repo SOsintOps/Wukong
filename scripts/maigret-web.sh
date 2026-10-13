@@ -6,22 +6,22 @@ set -euo pipefail
 
 PORT=5001
 URL="http://127.0.0.1:${PORT}"
-PROGRAMS_DIR="$HOME/.local/share/speculator/programs"
-SCRIPTS_DIR="$HOME/.local/share/speculator/scripts"
+PROGRAMS_DIR="$HOME/.local/share/wukong/programs"
+SCRIPTS_DIR="$HOME/.local/share/wukong/scripts"
 MAIGRET_VENV="$PROGRAMS_DIR/maigret/maigretEnvironment"
 ENHANCED_DIR="$SCRIPTS_DIR/maigret-enhanced"
 EVIDENCE_DIR="$HOME/Downloads/evidence/maigret"
 
 if [ ! -d "$MAIGRET_VENV" ]; then
     echo "ERROR: maigret venv not found at $MAIGRET_VENV"
-    echo "Run speculator_install.sh to install maigret from the SOsintOps fork."
+    echo "Run wukong_install.sh to install maigret from the SOsintOps fork."
     read -rp "Press Enter to close..."
     exit 1
 fi
 
 if [ ! -f "$ENHANCED_DIR/server.py" ]; then
     echo "ERROR: maigret-enhanced not found at $ENHANCED_DIR"
-    echo "Run speculator_install.sh to install the enhanced web UI."
+    echo "Run wukong_install.sh to install the enhanced web UI."
     read -rp "Press Enter to close..."
     exit 1
 fi
