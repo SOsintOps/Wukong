@@ -10,7 +10,7 @@ not ship.
 
 The motivating observation — drawn from the source material (see
 [02 — Source Material](02-source-material.md)) — is that mainstream OSINT manuals
-barely cover the Chinese internet. Bazzell's *OSINT Techniques* (11th ed.)
+barely cover the Chinese internet. Bazzell and Edison's [*OSINT Techniques*](https://inteltechniques.com/book1.html) (11th ed.)
 mentions "China" five times; other standard references treat it as a subject of
 analysis, not as a distinct methodology. Yet investigating China requires a
 different search stack, a different language competence, and a different legal
