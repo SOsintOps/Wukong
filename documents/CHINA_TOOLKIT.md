@@ -16,7 +16,7 @@ Three recurring access situations govern everything below:
 | **Social scrapers** | MediaCrawler, Weibo/Douyin/WeChat crawlers | A **logged-in account cookie**. Registering the account usually needs a **+86 phone**; avoiding bans often needs a **mainland-China residential proxy**. |
 | **Corporate aggregators** | TianYanCha, QCC, Aiqicha | IP-blocked outside China since ~2022 → **CN proxy + +86 account**. The state registry **GSXT is public and free** but Chinese-only with heavy CAPTCHA. |
 
-> **OPSEC / legal:** prepare the environment (isolated VM, proxy, throwaway identity **within legal limits**) *before* touching a target. Real-name registration law (tightened in July 2025 with the national Cyberspace ID) means impersonation to gain access leaves OSINT territory and may be illegal. Know your mandate first.
+> **OPSEC / legal:** prepare the environment (isolated VM, proxy, throwaway identity **within legal limits**) *before* touching a target. Real-name registration ties most platform accounts to a verified identity (usually a +86 phone); the National Cyberspace ID, available since 15 July 2025, is voluntary for now but centralises that verification further. Impersonation to gain access leaves OSINT territory and may be illegal. Know your mandate first.
 
 ---
 
@@ -123,9 +123,9 @@ Wukong installs the **clients**; the mainland-China endpoint, IP and configs are
 
 ## 5. Source map (from the OSINT-in-China research)
 
-- **Curated lists:** `paulpogoda/OSINT-Tools-China`, `OSINT-for-countries/OSINT_in_China`, `paulpogoda/OSINT-for-countries-V2.0`, `start.me/p/7kLY9R/osint-chine`, `cybdetective.com/osintmap`, `osint.place/china`.
+- **Curated lists:** [paulpogoda/OSINT-Tools-China](https://github.com/paulpogoda/OSINT-Tools-China), [OSINT-for-countries/OSINT_in_China](https://github.com/OSINT-for-countries/OSINT_in_China), [paulpogoda/OSINT-for-countries-V2.0](https://github.com/paulpogoda/OSINT-for-countries-V2.0), [start.me OSINT Chine](https://start.me/p/7kLY9R/osint-chine), [Cyber Detective OSINT map](https://cybdetective.com/osintmap), [osint.place/china](https://osint.place/china).
 - **Guides:** Bellingcat [*The Challenges of Conducting Open Source Research on China*](https://www.bellingcat.com/resources/2023/04/18/china-challenges-open-source-osint-social-media/) & [*Xiaohongshu (RedNote)*](https://www.bellingcat.com/resources/2026/04/20/xiaohongshu-rednote-open-source-guide/); OSINT Combine [*OSINT: The Chinese Internet*](https://www.osintcombine.com/post/osint-the-chinese-internet); GIJN [*Open Source Guide to Investigating Chinese Companies*](https://gijn.org/resource/asia-focus-open-source-guide-investigating-chinese-companies/); All Source China; [Project OSINT](https://projectosint.substack.com/p/osint-chinese-companies). Method: [05 — Analysis & Reporting](../documentation/05-analysis-and-reporting.md).
-- **Courses:** OSINT Combine Redbook, EPCyber (china-osint.com), i-intelligence, SANS SEC587.
+- **Courses:** OSINT Combine [*The OSINT Redbook: Searching the Chinese Internet*](https://training.osintcombine.com/courses/searching-the-chinese-internet); EPCyber [China OSINT training](https://china-osint.com/); i-intelligence [*OSINT: Searching the Chinese Internet*](https://i-intelligence.eu/courses/osint-chinese-internet-in-person) and [*Chinese Corporate Research*](https://i-intelligence.eu/courses/chinese-corporate-research-in-person); SANS [SEC587](https://www.sans.org/cyber-security-courses/advanced-open-source-intelligence-gathering-analysis) (advanced OSINT, with a Chinese OSINT module).
 
 ---
 

@@ -1,6 +1,6 @@
 # Wukong (悟空)
 
-![Version](https://img.shields.io/badge/version-0.1.2-blue)
+![Version](https://img.shields.io/badge/version-0.1.3-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![OS](https://img.shields.io/badge/OS-Debian%2013%20Trixie-red)
 ![Shell](https://img.shields.io/badge/shell-bash-yellow)
@@ -55,7 +55,7 @@ Full documentation lives in [`documentation/`](documentation/README.md):
 - [Source Material & Context](documentation/02-source-material.md) — the texts analysed (thesis, Cyber Detective channel, online research) and what is / isn't yet verified.
 - [FAQ](documentation/04-faq.md) — OSINT, China OSINT, and this project.
 - [Methodology & Legal](documentation/03-methodology-and-legal.md) — access prerequisites, the KYC workflow, and the legal/OPSEC context.
-- [Analysis & Reporting](documentation/05-analysis-and-reporting.md) — evaluating Chinese sources, translation, names and romanisation, writing about the Chinese state, the report.
+- [Analysis & Reporting](documentation/05-analysis-and-reporting.md) — evaluating Chinese sources, translation, the Great Firewall and archiving, corporate data traps and restricted lists, names and romanisation, writing about the Chinese state, the report, the Chinese and Hong Kong laws that matter.
 - [Intelligence Field Notes](documentation/field-notes/README.md) — offline copy of the analytic method shared by the SOsintOps tools.
 - [Version history](documentation/versionhistory.md) — the releases of Wukong.
 - [Tools index](documentation/tools/README.md) — **one page per China-specific tool** (install, access, usage, caveats).

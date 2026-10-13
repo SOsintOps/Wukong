@@ -23,7 +23,7 @@ Start with the general pages, then dive into individual tools as needed.
 | [02 — Source Material & Context](02-source-material.md) | The texts that were analysed (thesis, Telegram export, online research) and the validation work done on the toolkit. |
 | [03 — Methodology & Legal](03-methodology-and-legal.md) | The three-layer method, access prerequisites (API keys, cookies, +86), the corporate due-diligence workflow, and the legal/OPSEC context (Cyberspace ID). |
 | [04 — FAQ](04-faq.md) | Common questions on OSINT, China OSINT, and this project. |
-| [05 — Analysis & Reporting](05-analysis-and-reporting.md) | Evaluating Chinese sources, translation as a processing step, names and romanisation, writing about the Chinese state, the report, legal limits. |
+| [05 — Analysis & Reporting](05-analysis-and-reporting.md) | Evaluating Chinese sources, translation as a processing step, the Great Firewall and archiving, corporate data traps and restricted lists, names and romanisation, writing about the Chinese state, the report, legal limits. |
 | [Intelligence Field Notes](field-notes/README.md) | Offline copy of the notes on analytic standards, source evaluation, estimative language and report writing shared by the SOsintOps tools. |
 | [Version history](versionhistory.md) | The releases of Wukong. |
 

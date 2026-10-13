@@ -14,7 +14,7 @@ barely cover the Chinese internet. Bazzell and Edison's [*OSINT Techniques*](htt
 mentions "China" five times; other standard references treat it as a subject of
 analysis, not as a distinct methodology. Yet investigating China requires a
 different search stack, a different language competence, and a different legal
-posture. No pre-built OSINT VM addresses this. Wukong is an attempt to fill that gap.
+posture. We know of no pre-built OSINT VM that addresses this. Wukong is an attempt to fill that gap.
 
 ### Lineage
 
@@ -53,11 +53,13 @@ See [tools/language-layer.md](tools/language-layer.md).
 Reconnaissance across the Chinese web, social platforms, and cyberspace:
 
 - **Cyberspace engines:** FOFA (`fofax`, `gofofa`, `fofa` SDK), ZoomEye
-  (`zoomeye`, `kunyu`) — the "Chinese Shodan" family.
+  (`zoomeye`, `kunyu`), Quake (`quake`, 360's engine) — the "Chinese Shodan" family.
 - **Search & media:** `pydork` (Baidu dorking), `you-get` (Bilibili / Youku /
-  Douyin / Weibo media).
+  Douyin / Weibo media), `Douyin_TikTok_Download_API` (Douyin / TikTok /
+  Kuaishou / Bilibili, second short-video tool).
 - **Social scrapers:** `MediaCrawler` (Xiaohongshu / Douyin / Kuaishou /
-  Bilibili / Weibo / Tieba / Zhihu), `weibospider`, `weibo-crawler`, `snscrape`
+  Bilibili / Weibo / Tieba / Zhihu), `XHS-Downloader` (second Xiaohongshu
+  tool), `weibospider`, `weibo-crawler`, `snscrape`
   (Weibo module), `we-mp-rss` (WeChat 公众号), `BBDown` (Bilibili).
 - **Domain recon:** `ShuiZe` (asset gathering from a root domain).
 

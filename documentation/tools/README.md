@@ -32,6 +32,7 @@ For the general OSINT arsenal inherited from Speculator, see the
 | FOFA SDK | FOFA | API key | Standalone | [fofa-sdk.md](fofa-sdk.md) |
 | Kunyu | ZoomEye | API key | Standalone | [kunyu.md](kunyu.md) |
 | ZoomEye CLI | ZoomEye | API key | Standalone | [zoomeye.md](zoomeye.md) |
+| Quake CLI (`quake_rs`) | Quake (360) | API key | In manifest | [quake.md](quake.md) |
 
 ## Search & media
 
@@ -40,12 +41,14 @@ For the general OSINT arsenal inherited from Speculator, see the
 | PyDork | Baidu dorking | none | In manifest | [pydork.md](pydork.md) |
 | you-get | Bilibili/Youku/Douyin/Weibo media | none | In manifest | [you-get.md](you-get.md) |
 | BBDown | Bilibili (4K, subs) | none | Standalone | [bbdown.md](bbdown.md) |
+| Douyin_TikTok_Download_API | Douyin/TikTok/Kuaishou/Bilibili (2nd short-video tool) | cookie | Standalone | [douyin-tiktok-download-api.md](douyin-tiktok-download-api.md) |
 
 ## Social scrapers
 
 | Tool | Platforms | Access | Status | Page |
 |------|-----------|--------|--------|------|
 | MediaCrawler | XHS/Douyin/Kuaishou/Bilibili/Weibo/Tieba/Zhihu | cookie/QR login | Standalone | [mediacrawler.md](mediacrawler.md) |
+| XHS-Downloader | Xiaohongshu/RedNote (2nd tool) | cookie optional | Standalone | [xhs-downloader.md](xhs-downloader.md) |
 | snscrape | Weibo (module) | cookie (fragile) | In manifest | [snscrape.md](snscrape.md) |
 | weibospider | Weibo | cookie | Standalone | [weibospider.md](weibospider.md) |
 | weibo-crawler | Weibo (+ media) | cookie | Standalone | [weibo-crawler.md](weibo-crawler.md) |

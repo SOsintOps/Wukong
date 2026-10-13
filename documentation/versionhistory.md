@@ -4,6 +4,17 @@ Changelog of the releases of Wukong, the China-focused OSINT workstation of SOsi
 
 ---
 
+## 0.1.3 — 2026
+
+- **Docs:** [05 — Analysis & Reporting](05-analysis-and-reporting.md) is customised further for China: court records, commercial-looking state media, Baidu Baike and Zhihu, wolf-warrior and Spamouflage-style accounts and censorship trackers in the source table; the Great Firewall and archiving; corporate data traps (万元 and 亿, subscribed and paid-in capital with the 2024 Company Law five-year rule, the legal representative); the US and Chinese restricted lists; compound surnames, Western name order, Hong Kong and Taiwan names, pinyin ambiguity, the Chinese Commercial Code and the Minguo calendar; resident ID numbers; OSINT versus 人肉搜索; the laws linked to English translations, with the National Intelligence Law, the 2024 State Secrets Law ("work secrets") and the Hong Kong National Security Law and Article 23 Ordinance added. UNODC and ICD 203 are linked at first mention.
+- **Docs:** [03 — Methodology & Legal](03-methodology-and-legal.md): China Judgements Online, the enforcement disclosure site, CNIPA, the government procurement portal, the Hong Kong Companies Registry, HKEXnews and Taiwan's company registry added to the registries reference.
+- **Docs:** FAQ restructured with a table of contents; new questions on the Great Firewall, VPNs and devices when travelling to China, Chinese-language Telegram channels and report templates (Speculator's templates, with the China rules of 05).
+- **Docs:** tool pages for [Quake](tools/quake.md), [XHS-Downloader](tools/xhs-downloader.md) and [Douyin_TikTok_Download_API](tools/douyin-tiktok-download-api.md), which were installed but missing from the tools index and the project overview.
+- **Fixed:** `documents/CHINA_TOOLKIT.md` described the National Cyberspace ID as a tightening of real-name law; it is voluntary for now. Its curated lists and courses are now links. The claim that Wukong is the first China-focused OSINT VM is softened to "we know of no other".
+- **Docs:** `field-notes/` updated to the Intelligence Field Notes 0.1.2.
+
+---
+
 ## 0.1.2 — 2026
 
 - **Fixed:** ENScan_GO installs again: its upstream repository (`wgpsec/ENScan_GO`) was deleted, and the installer now clones the archival mirror [usdagfhjkda/wgpsec-ENScan_GO](https://github.com/usdagfhjkda/wgpsec-ENScan_GO) (Apache-2.0, identical to upstream up to the author's last commit of 28 March 2026). The tool page names [zh0u9527/ENScan_GO](https://github.com/zh0u9527/ENScan_GO) as an active alternative.

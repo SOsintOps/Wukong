@@ -64,8 +64,8 @@ and added the legal context. Key confirmations:
 - **Legal:** China's **National Cyberspace ID** took effect **2025-07-15**,
   tightening real-name identity — a material OPSEC consideration (see
   [03 — Methodology & Legal](03-methodology-and-legal.md#legal--opsec)).
-- **Differentiation confirmed:** no pre-built OSINT VM is dedicated to China —
-  Wukong is the first.
+- **Differentiation:** we know of no other pre-built OSINT VM dedicated to
+  China; if one exists, we would be glad to hear of it.
 
 ---
 

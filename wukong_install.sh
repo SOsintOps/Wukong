@@ -2,7 +2,7 @@
 
 # ###############################################################
 # # WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT
-# # Version: 0.1.2
+# # Version: 0.1.3
 # # Target:  Debian 13 "Trixie" (amd64)
 # # A China-focused OSINT spinoff of the Speculator Project.
 # # Adds: full CJK stack (fonts + fcitx5 IME + zh locales),
@@ -349,7 +349,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 {
     echo "#################################################################"
-    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.2      #"
+    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.3      #"
     echo "# Target: Debian 13 Trixie (amd64)                             #"
     echo "#################################################################"
     echo "# Real user : $REAL_USER"

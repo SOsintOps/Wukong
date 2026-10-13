@@ -60,7 +60,10 @@ The KYC workflow chains sources because **no single database is authoritative**:
    registry + OpenCorporates/Sayari. Watch for VIE structures and state-linked
    entities designed for opacity.
 5. **Risk / sanctions** — 信用中国 (creditchina.gov.cn) for blacklists;
-   Datenna / Sayari for state links and restricted-party ties.
+   Datenna / Sayari for state links and restricted-party ties; the US and Chinese
+   restricted lists in [05 — Analysis & Reporting](05-analysis-and-reporting.md#restricted-and-sanctions-lists).
+   Read capital and legal-representative data with the
+   [corporate data traps](05-analysis-and-reporting.md#corporate-data-traps) in mind.
 
 Rule: **GSXT = legal ground-truth; aggregators = relational richness;
 Sayari/Datenna = cross-border chain.**
@@ -76,6 +79,13 @@ Sayari/Datenna = cross-border chain.**
 | QCC (Qichacha) | qcc.com | Freemium + paid API | CN proxy + +86 |
 | Aiqicha (Baidu) | aiqicha.baidu.com | Freemium | Baidu account |
 | Sayari / Datenna | sayari.com / datenna.com | Paid | Strong on UBO chains |
+| 中国裁判文书网 China Judgements Online | [wenshu.court.gov.cn](https://wenshu.court.gov.cn/) | Free | Chinese; millions of judgements removed since 2021 — see [05](05-analysis-and-reporting.md#evaluating-chinese-sources) |
+| 中国执行信息公开网 Enforcement disclosure | [zxgk.court.gov.cn](https://zxgk.court.gov.cn/) | Free | Judgement defaulters (失信被执行人), consumption bans; CAPTCHA |
+| CNIPA (patents, trademarks) | [cnipa.gov.cn](https://www.cnipa.gov.cn/) | Free | Chinese; English portal at english.cnipa.gov.cn |
+| 中国政府采购网 Government procurement | [ccgp.gov.cn](http://www.ccgp.gov.cn/) | Free | Tenders and awards: who sells to which state body |
+| Hong Kong Companies Registry | [e-services.cr.gov.hk](https://www.e-services.cr.gov.hk/) | Index free, particulars paid | English/Chinese; e-Services Portal replaced the old ICRIS search in December 2023 |
+| HKEXnews (HK-listed cos.) | [hkexnews.hk](https://www.hkexnews.hk/) | Free | Filings, prospectuses, shareholding disclosures |
+| Taiwan 商工登記公示資料查詢 | [findbiz.nat.gov.tw](https://findbiz.nat.gov.tw/) | Free | Taiwan company and business registrations (Traditional Chinese) |
 
 ---
 
