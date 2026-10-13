@@ -54,8 +54,9 @@ and added the legal context. Key confirmations:
 
 - **ENScan_GO** (wgpsec) was actively maintained in July 2026, with an MCP mode
   for AI orchestration. **Update, October 2026:** the `wgpsec/ENScan_GO`
-  repository no longer exists (GitHub returns 404), so the installer step that
-  clones it fails; a replacement source is still to be chosen.
+  repository was deleted upstream; Wukong now installs it from the archival
+  mirror [usdagfhjkda/wgpsec-ENScan_GO](https://github.com/usdagfhjkda/wgpsec-ENScan_GO) (Apache-2.0, identical to
+  upstream up to 28 March 2026).
 - **MediaCrawler** ([NanmiCoder](https://github.com/NanmiCoder/MediaCrawler)) is
   the reference multi-platform social crawler, now with a WebUI.
 - **KYC:** GSXT is the free official ground-truth; TianYanCha / QCC are ~95%

