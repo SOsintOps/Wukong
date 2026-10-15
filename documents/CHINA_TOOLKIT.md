@@ -88,6 +88,8 @@ Baidu Images (`image.baidu.com`), Sogou (`pic.sogou.com`, "以图搜图"), Yande
 
 ### Due-diligence workflow (how the sources chain)
 
+[Currawong USCI Checker](https://currawongweb.com/verify/china-usci-checker/) — Free browser-based format and check-digit checks for China's 18-character Unified Social Credit Code (USCI/USCC). Use it to spot transcription errors before company-record research. A passing result does not prove registration, current status, ownership or payment safety.
+
 1. **Anchor identity** — start from the **USCC** (18-char Unified Social Credit Code) or the exact **Chinese legal name**. Only a domain? Run **ICP lookup** to get the registrant, then search that.
 2. **Ground truth** — verify on **GSXT**: status, USCC, legal representative, capital, business scope, shareholders.
 3. **Enrichment** — **TianYanCha/QCC/Aiqicha** (+ **ENScan_GO** automation) for cross-holdings, litigation, patents, change history, subsidiary map, ICP/apps/公众号.
