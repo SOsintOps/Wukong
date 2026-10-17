@@ -2,7 +2,7 @@
 
 # ###############################################################
 # # WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT
-# # Version: 0.1.4
+# # Version: 0.1.5
 # # Target:  Debian 13 "Trixie" (amd64)
 # # A China-focused OSINT spinoff of the Speculator Project.
 # # Adds: full CJK stack (fonts + fcitx5 IME + zh locales),
@@ -349,7 +349,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 {
     echo "#################################################################"
-    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.4      #"
+    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.5      #"
     echo "# Target: Debian 13 Trixie (amd64)                             #"
     echo "#################################################################"
     echo "# Real user : $REAL_USER"
@@ -572,6 +572,12 @@ FCITX5_EOF
         | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
     sudo apt update
     if sudo apt install -y brave-browser; then
+        # Chromium policies: force-install the OSINT extensions that exist only
+        # on the Chrome Web Store (Vortimo, Sputnik, EXIF Viewer Pro). Brave reads
+        # /etc/brave/policies/managed/*.json; the package does not create the dir.
+        sudo install -d -m 755 /etc/brave/policies/managed
+        sudo install -m 644 "$_REPO_DIR/config/brave-policies.json" \
+            /etc/brave/policies/managed/osint.json
         mark_ok "app:brave-browser"
     else
         echo "WARNING: Brave Browser install failed."

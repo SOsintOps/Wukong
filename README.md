@@ -1,6 +1,6 @@
 # Wukong (悟空)
 
-![Version](https://img.shields.io/badge/version-0.1.4-blue)
+![Version](https://img.shields.io/badge/version-0.1.5-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![OS](https://img.shields.io/badge/OS-Debian%2013%20Trixie-red)
 ![Shell](https://img.shields.io/badge/shell-bash-yellow)
@@ -82,6 +82,12 @@ Two graph tools sit in the **Frameworks** launcher, next to Recon-ng, sn0int, Ch
 ### Reporting
 
 - [**ONLYOFFICE Desktop Editors**](https://www.onlyoffice.com/desktop.aspx), from its official APT repository, opens Speculator's `.docx` [report templates](documentation/04-faq.md#are-there-report-templates-for-wukong) with the layout fidelity of Word; Chinese text renders with the Noto CJK fonts above.
+
+### Browsers
+
+- **Firefox ESR**, start page [Exploratores](https://github.com/SOsintOps/Exploratores), with 18 extensions installed by policy: uBlock Origin, CanvasBlocker, ClearURLs, Multi-Account Containers, Exify, Wayback Machine, Web Archives, Resurrect Pages, Search by Image, Link Gopher, Mitaka, Sputnik, Wappalyzer, IP Address and Domain Information (DNSlytics), Hunter, User-Agent Switcher and Manager, SingleFile and ArchiveBox. Hunter needs an account and sends the visited domains to its service; Wappalyzer is closed source. Full-page screenshots use the one built into Firefox (Ctrl+Shift+S). The Italian and Simplified Chinese language packs are installed.
+- [**Brave**](https://brave.com/) with Vortimo, Sputnik and EXIF Viewer Pro, which exist only on the Chrome Web Store.
+- [**Tor Browser**](https://www.torproject.org/) from Flathub (`torbrowser-launcher`).
 
 ### Sinophone OSINT tools
 

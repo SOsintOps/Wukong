@@ -141,6 +141,12 @@ _test "installer installs ONLYOFFICE Desktop Editors" "true" \
   "$(grep -q 'apt install -y onlyoffice-desktopeditors' "$installer" && echo true || echo false)"
 _test "ONLYOFFICE repository is signed-by a dedicated keyring" "true" \
   "$(grep -q 'signed-by=/etc/apt/keyrings/onlyoffice.gpg' "$installer" && echo true || echo false)"
+_test "Firefox policies install 18 extensions" "18" \
+  "$(grep -c '"installation_mode": "normal_installed"' "$SCRIPT_DIR/config/policies.json")"
+_test "installer deploys the Brave extension policy" "true" \
+  "$(grep -q 'config/brave-policies.json' "$installer" && echo true || echo false)"
+_test "Brave policy force-installs 3 extensions" "3" \
+  "$(grep -c 'clients2.google.com/service/update2/crx' "$SCRIPT_DIR/config/brave-policies.json")"
 
 ###############################################################################
 # Summary

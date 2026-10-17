@@ -4,6 +4,14 @@ Changelog of the releases of Wukong, the China-focused OSINT workstation of SOsi
 
 ---
 
+## 0.1.5 — 2026
+
+- **Changed:** Firefox ESR extension set (`config/policies.json`) revised against the add-on listings of 17 October 2026, in step with Speculator 0.12.1. Removed GPSDetect and Nimbus Screen Capture (last releases in 2020) and Exif Viewer (code unchanged for years, only re-signed in 2024). Added Exify (EXIF and GPS data), Sputnik, Wappalyzer, IP Address and Domain Information (DNSlytics), Hunter, User-Agent Switcher and Manager, SingleFile (saves the whole page as one HTML file), Web Archives (looks the page up on the Wayback Machine, archive.today, Ghostarchive and the search engine caches) and ArchiveBox (sends the page to the local ArchiveBox). 18 extensions in all; full-page screenshots use the one built into Firefox (Ctrl+Shift+S). Hunter needs an account and sends the visited domains to its service; Wappalyzer is closed source since 2023.
+- **New:** Brave gets `config/brave-policies.json`, deployed to `/etc/brave/policies/managed/osint.json`, which force-installs Vortimo, Sputnik and EXIF Viewer Pro, available only on the Chrome Web Store. Checked by `tests/test_wukong.sh`.
+- **Docs:** README gains a "Browsers" subsection listing Firefox ESR, Brave and Tor Browser with their extensions.
+
+---
+
 ## 0.1.4 — 2026
 
 - **New:** ONLYOFFICE Desktop Editors (`onlyoffice-desktopeditors`) installed from the official ONLYOFFICE APT repository, signed with its key in `/etc/apt/keyrings/onlyoffice.gpg`, so Speculator's `.docx` report templates open and fill with the layout fidelity of Word; tracked as `app:onlyoffice` in the installation summary and checked by `tests/test_wukong.sh`. README ("Reporting") and the FAQ on report templates name it.
