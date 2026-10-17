@@ -1,6 +1,6 @@
 # Wukong (悟空)
 
-![Version](https://img.shields.io/badge/version-0.1.3-blue)
+![Version](https://img.shields.io/badge/version-0.1.4-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![OS](https://img.shields.io/badge/OS-Debian%2013%20Trixie-red)
 ![Shell](https://img.shields.io/badge/shell-bash-yellow)
@@ -78,6 +78,10 @@ Two graph tools sit in the **Frameworks** launcher, next to Recon-ng, sn0int, Ch
 
 - [**Quaesitor**](https://github.com/SOsintOps/quaesitor) on `http://127.0.0.1:5002`: the case as a graph of people, phones, e-mails, profiles, companies and documents. A name in Chinese characters and its pinyin form stay one node; scanned documents are read with OCR; Follow the Money datasets can be imported. The archive lives in `~/Downloads/evidence/quaesitor`, and nothing leaves the computer unless an online lookup is switched on.
 - [**Flowsint**](https://github.com/reconurge/flowsint) on `http://127.0.0.1:5173`: graph investigation platform with enrichers, run from its Docker images at the latest release; create your account at `/register` on the first visit. The installer adds your user to the `docker` group (active after the reboot) and keeps the generated passwords in `~/.config/wukong/flowsint.env`: never delete that file, the databases are initialised with it.
+
+### Reporting
+
+- [**ONLYOFFICE Desktop Editors**](https://www.onlyoffice.com/desktop.aspx), from its official APT repository, opens Speculator's `.docx` [report templates](documentation/04-faq.md#are-there-report-templates-for-wukong) with the layout fidelity of Word; Chinese text renders with the Noto CJK fonts above.
 
 ### Sinophone OSINT tools
 

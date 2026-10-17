@@ -123,7 +123,7 @@ As any intelligence report — bottom line first, facts apart from judgements, e
 
 ### Are there report templates for Wukong?
 
-Wukong ships no templates of its own: use the ones in Speculator's [templates folder](https://github.com/SOsintOps/Speculator-Project/tree/main/templates) (case cover sheet, full and executive reports, a plain Markdown report, subject profile, event assessment, threat notice, research log), which follow the common method. [05 — Analysis & Reporting](05-analysis-and-reporting.md) adds the China-specific rules to apply inside them: quotations in both languages with the translator named, names in characters and pinyin, the Chinese legal name and USCC for companies, dates converted to UTC, the firewall and language limits in the method section, and resident ID numbers and people inside China kept out of anything that travels.
+Wukong ships no templates of its own: use the ones in Speculator's [templates folder](https://github.com/SOsintOps/Speculator-Project/tree/main/templates) (case cover sheet, full and executive reports, a plain Markdown report, subject profile, event assessment, threat notice, research log), which follow the common method. The `.docx` ones open in ONLYOFFICE Desktop Editors, which Wukong installs from its official APT repository. [05 — Analysis & Reporting](05-analysis-and-reporting.md) adds the China-specific rules to apply inside them: quotations in both languages with the translator named, names in characters and pinyin, the Chinese legal name and USCC for companies, dates converted to UTC, the firewall and language limits in the method section, and resident ID numbers and people inside China kept out of anything that travels.
 
 ---
 

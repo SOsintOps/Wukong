@@ -137,6 +137,10 @@ _test "installer installs the manifest next to the scripts" "true" \
   "$(grep -q 'cp "$_REPO_DIR/config/tools.conf" "$REAL_HOME/.local/share/wukong/config/tools.conf"' "$installer" && echo true || echo false)"
 _test "frameworks.sh launches in the foreground (launch_framework)" "true" \
   "$(grep -q '^launch_framework()' "$SCRIPT_DIR/scripts/frameworks.sh" && echo true || echo false)"
+_test "installer installs ONLYOFFICE Desktop Editors" "true" \
+  "$(grep -q 'apt install -y onlyoffice-desktopeditors' "$installer" && echo true || echo false)"
+_test "ONLYOFFICE repository is signed-by a dedicated keyring" "true" \
+  "$(grep -q 'signed-by=/etc/apt/keyrings/onlyoffice.gpg' "$installer" && echo true || echo false)"
 
 ###############################################################################
 # Summary

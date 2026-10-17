@@ -4,6 +4,12 @@ Changelog of the releases of Wukong, the China-focused OSINT workstation of SOsi
 
 ---
 
+## 0.1.4 — 2026
+
+- **New:** ONLYOFFICE Desktop Editors (`onlyoffice-desktopeditors`) installed from the official ONLYOFFICE APT repository, signed with its key in `/etc/apt/keyrings/onlyoffice.gpg`, so Speculator's `.docx` report templates open and fill with the layout fidelity of Word; tracked as `app:onlyoffice` in the installation summary and checked by `tests/test_wukong.sh`. README ("Reporting") and the FAQ on report templates name it.
+
+---
+
 ## 0.1.3 — 2026
 
 - **Docs:** [05 — Analysis & Reporting](05-analysis-and-reporting.md) is customised further for China: court records, commercial-looking state media, Baidu Baike and Zhihu, wolf-warrior and Spamouflage-style accounts and censorship trackers in the source table; the Great Firewall and archiving; corporate data traps (万元 and 亿, subscribed and paid-in capital with the 2024 Company Law five-year rule, the legal representative); the US and Chinese restricted lists; compound surnames, Western name order, Hong Kong and Taiwan names, pinyin ambiguity, the Chinese Commercial Code and the Minguo calendar; resident ID numbers; OSINT versus 人肉搜索; the laws linked to English translations, with the National Intelligence Law, the 2024 State Secrets Law ("work secrets") and the Hong Kong National Security Law and Article 23 Ordinance added. UNODC and ICD 203 are linked at first mention.
