@@ -8,6 +8,7 @@ Common questions about OSINT in general, about investigating China specifically,
 * [Is OSINT legal?](#is-osint-legal)
 * [Passive vs. active — what's the difference?](#passive-vs-active--whats-the-difference)
 * [Do I need a special environment?](#do-i-need-a-special-environment)
+* [How is Firefox hardened, and can I change it?](#how-is-firefox-hardened-and-can-i-change-it)
 * [How do I keep findings credible?](#how-do-i-keep-findings-credible)
 * [Why is investigating China "a different craft"?](#why-is-investigating-china-a-different-craft)
 * [Do I need to read/type Chinese?](#do-i-need-to-readtype-chinese)
@@ -48,6 +49,10 @@ Collecting genuinely public information is legal in most jurisdictions, but the 
 ### Do I need a special environment?
 
 Yes — a **dedicated, isolated VM** keeps your investigation separate from your personal identity and avoids contaminating evidence. That is exactly what this project builds. Combine it with sensible OPSEC (a clean browser profile, a proxy or VPN where appropriate, no logging into personal accounts).
+
+### How is Firefox hardened, and can I change it?
+
+The installer deploys an enterprise policy (`config/policies.json`) to `/usr/lib/firefox-esr/distribution/policies.json`; Firefox ESR reads it at every start and `about:policies` shows what is active. The policy disables telemetry, Studies, Pocket, Firefox Accounts, form history and the password manager; sets Enhanced Tracking Protection to strict and locks it (trackers, cryptominers, fingerprinters, email trackers and suspected fingerprinting); locks the fingerprinting protection (`privacy.fingerprintingProtection`); disables WebRTC, geolocation, camera and microphone, the battery API, DNS prefetching and link prefetching; turns off Google Safe Browsing (every visited address would otherwise be checked against Google); blocks the camera, microphone, location and notification permissions and autoplay; and clears cache, cookies, history and sessions on shutdown. The 18 extensions and the OSINT bookmarks come from the same file. Locked settings cannot be changed in the Settings page or in `about:config`; the Exploratores start page is not locked. Two settings are deliberately absent because Firefox does not let a policy set them: `privacy.resistFingerprinting` (enable it yourself in `about:config` if you want it; it forces the UTC time zone and a fixed window size, which Chinese platforms with device checks notice) and `beacon.enabled` (uBlock Origin and strict tracking protection block the tracker beacons). To change a locked setting, edit the deployed file and restart Firefox. Brave has its own policy, `/etc/brave/policies/managed/osint.json`, which only force-installs its three extensions; `brave://policy` shows it.
 
 ### How do I keep findings credible?
 

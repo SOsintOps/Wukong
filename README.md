@@ -1,6 +1,6 @@
 # Wukong (悟空)
 
-![Version](https://img.shields.io/badge/version-0.1.5-blue)
+![Version](https://img.shields.io/badge/version-0.1.6-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![OS](https://img.shields.io/badge/OS-Debian%2013%20Trixie-red)
 ![Shell](https://img.shields.io/badge/shell-bash-yellow)
@@ -85,7 +85,7 @@ Two graph tools sit in the **Frameworks** launcher, next to Recon-ng, sn0int, Ch
 
 ### Browsers
 
-- **Firefox ESR**, start page [Exploratores](https://github.com/SOsintOps/Exploratores), with 18 extensions installed by policy: uBlock Origin, CanvasBlocker, ClearURLs, Multi-Account Containers, Exify, Wayback Machine, Web Archives, Resurrect Pages, Search by Image, Link Gopher, Mitaka, Sputnik, Wappalyzer, IP Address and Domain Information (DNSlytics), Hunter, User-Agent Switcher and Manager, SingleFile and ArchiveBox. Hunter needs an account and sends the visited domains to its service; Wappalyzer is closed source. Full-page screenshots use the one built into Firefox (Ctrl+Shift+S). The Italian and Simplified Chinese language packs are installed.
+- **Firefox ESR**, start page [Exploratores](https://github.com/SOsintOps/Exploratores), with 18 extensions installed by policy: uBlock Origin, CanvasBlocker, ClearURLs, Multi-Account Containers, Exify, Wayback Machine, Web Archives, Resurrect Pages, Search by Image, Link Gopher, Mitaka, Sputnik, Wappalyzer, IP Address and Domain Information (DNSlytics), Hunter, User-Agent Switcher and Manager, SingleFile and ArchiveBox. Hunter needs an account and sends the visited domains to its service; Wappalyzer is closed source. Full-page screenshots use the one built into Firefox (Ctrl+Shift+S). The same policy locks strict tracking protection and fingerprinting protection, disables WebRTC, geolocation, telemetry and Safe Browsing and clears the browsing data on shutdown; the [FAQ](documentation/04-faq.md#how-is-firefox-hardened-and-can-i-change-it) lists every setting and how to change it. The Italian and Simplified Chinese language packs are installed.
 - [**Brave**](https://brave.com/) with Vortimo, Sputnik and EXIF Viewer Pro, which exist only on the Chrome Web Store.
 - [**Tor Browser**](https://www.torproject.org/) from Flathub (`torbrowser-launcher`).
 

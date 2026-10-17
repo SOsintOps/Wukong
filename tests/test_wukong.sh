@@ -147,6 +147,10 @@ _test "installer deploys the Brave extension policy" "true" \
   "$(grep -q 'config/brave-policies.json' "$installer" && echo true || echo false)"
 _test "Brave policy force-installs 3 extensions" "3" \
   "$(grep -c 'clients2.google.com/service/update2/crx' "$SCRIPT_DIR/config/brave-policies.json")"
+_test "Firefox policies set EnableTrackingProtection" "true" \
+  "$(grep -q '"EnableTrackingProtection"' "$SCRIPT_DIR/config/policies.json" && echo true || echo false)"
+_test "Firefox Preferences policy has no entries Firefox rejects" "0" \
+  "$(grep -c 'resistFingerprinting\|beacon.enabled\|toolkit.telemetry\|datareporting.healthreport\|privacy.trackingprotection' "$SCRIPT_DIR/config/policies.json")"
 
 ###############################################################################
 # Summary
