@@ -4,6 +4,14 @@ Changelog of the releases of Wukong, the China-focused OSINT workstation of SOsi
 
 ---
 
+## 0.1.8 — 2026
+
+- **Changed:** `config/tools.conf`: the three Consensus entries save every outcome (`-a`), not only the matches, so the HTML report also lists the blocked, rate-limited and inconclusive checks an analyst may want to retry through a proxy. In step with Speculator 0.12.4.
+- **Fixed:** the launcher scripts in `scripts/` are now executable in the repository (mode 755), as in Speculator; the installer already set the bit when copying them, so only clones used in place were affected.
+- **Docs:** `tests/test_wukong.sh` checks the three Consensus entries of the manifest and the pipx package in the installer.
+
+---
+
 ## 0.1.7 — 2026
 
 - **New:** [Consensus](https://github.com/OSINT-Experts-Society/Consensus-OSINT) (OSINT Experts Society, GPL-3.0-or-later), installed with pipx as `consensus-osint[modules,pdf]`: one username, email or phone search over the lookup catalogues of 19 projects (Maigret, Sherlock, WhatsMyName, Holehe, Socialscan, Ignorant, User Scanner and others), with the overlapping checks reconciled, a confidence score per result and HTML, JSON, CSV and PDF reports. It complements the single tools, which stay installed: the repository was created on 8 October 2026 and the project still has to earn its place as the first choice. The Person launcher offers it for usernames and emails (`--fast`, up to 300 checks) and for phone numbers (`config/tools.conf`, three entries, HTML report). No telemetry; the start-up version check against PyPI is disabled with `--no-update-check`, and updates follow `pipx upgrade-all` like the other pipx tools. Their own `install.sh` is not used: it downloads uv and a private Python runtime. Checked on Debian 13.7 (WSL): 232 MB, 40 checks in 13 seconds. In step with Speculator 0.12.3.

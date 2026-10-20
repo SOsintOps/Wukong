@@ -133,6 +133,12 @@ done
 for _pkg in tesseract-ocr tesseract-ocr-chi-sim tesseract-ocr-chi-tra python3-icu; do
   _test "installer package list has $_pkg (Quaesitor OCR/transliteration)" "true"     "$(grep -qE "(^|[[:space:]])$_pkg([[:space:]]|$)" "$installer" && echo true || echo false)"
 done
+for _c in email username phone; do
+  _test "tools.conf has the Consensus ($_c) entry" "true" \
+    "$(grep -q "^Consensus ($_c)|consensus-$_c|$_c|pipx|consensus|" "$SCRIPT_DIR/config/tools.conf" && echo true || echo false)"
+done
+_test "installer installs consensus-osint with pipx" "true" \
+  "$(grep -q 'consensus-osint\[modules,pdf\]' "$installer" && echo true || echo false)"
 _test "installer installs the manifest next to the scripts" "true" \
   "$(grep -q 'cp "$_REPO_DIR/config/tools.conf" "$REAL_HOME/.local/share/wukong/config/tools.conf"' "$installer" && echo true || echo false)"
 _test "frameworks.sh launches in the foreground (launch_framework)" "true" \
