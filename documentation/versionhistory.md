@@ -4,6 +4,12 @@ Changelog of the releases of Wukong, the China-focused OSINT workstation of SOsi
 
 ---
 
+## 0.1.7 — 2026
+
+- **New:** [Consensus](https://github.com/OSINT-Experts-Society/Consensus-OSINT) (OSINT Experts Society, GPL-3.0-or-later), installed with pipx as `consensus-osint[modules,pdf]`: one username, email or phone search over the lookup catalogues of 19 projects (Maigret, Sherlock, WhatsMyName, Holehe, Socialscan, Ignorant, User Scanner and others), with the overlapping checks reconciled, a confidence score per result and HTML, JSON, CSV and PDF reports. It complements the single tools, which stay installed: the repository was created on 8 October 2026 and the project still has to earn its place as the first choice. The Person launcher offers it for usernames and emails (`--fast`, up to 300 checks) and for phone numbers (`config/tools.conf`, three entries, HTML report). No telemetry; the start-up version check against PyPI is disabled with `--no-update-check`, and updates follow `pipx upgrade-all` like the other pipx tools. Their own `install.sh` is not used: it downloads uv and a private Python runtime. Checked on Debian 13.7 (WSL): 232 MB, 40 checks in 13 seconds. In step with Speculator 0.12.3.
+
+---
+
 ## 0.1.6 — 2026
 
 - **Fixed:** `config/policies.json`: Firefox silently rejected seven of the sixteen entries of the `Preferences` policy (`privacy.resistFingerprinting`, `privacy.trackingprotection.enabled`, `privacy.trackingprotection.socialtracking.enabled`, `beacon.enabled`, `toolkit.telemetry.enabled`, `toolkit.telemetry.unified`, `datareporting.healthreport.uploadEnabled`), whose prefixes are not on the allow-list of that policy; `about:policies` marked the block "Not fully applied" and fingerprinting resistance had never been active. Tracking protection now comes from the `EnableTrackingProtection` policy (strict category, locked, with cryptomining, fingerprinting, email tracking and suspected fingerprinting), which also sets `browser.contentblocking.category`; `privacy.fingerprintingProtection` (and its private-browsing twin) replaces `privacy.resistFingerprinting`, which no policy can set; the telemetry entries go because `DisableTelemetry` already locks the upload; `beacon.enabled` goes because no policy can set it. In step with Speculator 0.12.2.

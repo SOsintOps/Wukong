@@ -2,7 +2,7 @@
 
 # ###############################################################
 # # WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT
-# # Version: 0.1.6
+# # Version: 0.1.7
 # # Target:  Debian 13 "Trixie" (amd64)
 # # A China-focused OSINT spinoff of the Speculator Project.
 # # Adds: full CJK stack (fonts + fcitx5 IME + zh locales),
@@ -349,7 +349,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 {
     echo "#################################################################"
-    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.6      #"
+    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.7      #"
     echo "# Target: Debian 13 Trixie (amd64)                             #"
     echo "#################################################################"
     echo "# Real user : $REAL_USER"
@@ -673,6 +673,11 @@ FCITX5_EOF
         # social-analyzer: 999 siti, web UI, OCR detection. NOTE: lo stato 'maybe'
         # genera falsi positivi — usare con filtro --threshold o esaminare i soli 'found'.
         social-analyzer
+        # Consensus (OSINT Experts Society): username, email and phone lookups from
+        # the catalogues of 19 projects (Maigret, Sherlock, WhatsMyName, Holehe...),
+        # deduplicated, with HTML, JSON, CSV and PDF reports. Complements the single
+        # tools above; the start-up version check is disabled in tools.conf.
+        "consensus-osint[modules,pdf]"
     )
     for pkg in "${PIPX_PACKAGES[@]}"; do
         if run_as_user pipx install "$pkg"; then

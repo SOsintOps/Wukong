@@ -115,9 +115,9 @@ These are documented in the Speculator project; summarised here by category:
 
 | Category | Examples |
 |----------|----------|
-| Email | Holehe, GHunt, H8Mail, Eyes, Mailcat, Profil3r, SocialScan |
-| Username | Sherlock, Maigret, Blackbird, WhatsMyName, Enola, Stalkie, Naminter, Social-Analyzer, Aliens Eye |
-| Phone | Ignorant, PhoneInfoga |
+| Email | Holehe, GHunt, H8Mail, Eyes, Mailcat, Profil3r, SocialScan, Consensus |
+| Username | Sherlock, Maigret, Blackbird, WhatsMyName, Enola, Stalkie, Naminter, Social-Analyzer, Aliens Eye, Consensus |
+| Phone | Ignorant, PhoneInfoga, Consensus |
 | Hash | NameThatHash, SearchThatHash |
 | Domain / infra | Amass, Subfinder, Httpx, Nuclei, Sublist3r, theHarvester, Photon, Metagoofil, Fierce |
 | Social | Instaloader, Toutatis, Osintgram, BDFR (Reddit) |
