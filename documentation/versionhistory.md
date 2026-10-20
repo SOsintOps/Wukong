@@ -4,6 +4,12 @@ Changelog of the releases of Wukong, the China-focused OSINT workstation of SOsi
 
 ---
 
+## 0.1.9 — 2026
+
+- **Fixed:** `config/tools.conf`: the three Consensus entries put the subcommand first (`consensus user {target} ...`). Consensus 0.4.11 only strips `--no-update-check` before it looks for the subcommand; any other leading option (`--no-color`, `-q`, `-a`) turns the whole line into a scan and the word `user`, `email` or `phone` was searched as an extra username. Reports carried results for that word, and the phone entry spent about five minutes on a full username scan of "phone". Reported upstream. In step with Speculator 0.12.5.
+
+---
+
 ## 0.1.8 — 2026
 
 - **Changed:** `config/tools.conf`: the three Consensus entries save every outcome (`-a`), not only the matches, so the HTML report also lists the blocked, rate-limited and inconclusive checks an analyst may want to retry through a proxy. In step with Speculator 0.12.4.
