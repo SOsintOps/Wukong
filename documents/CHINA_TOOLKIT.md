@@ -88,7 +88,7 @@ Baidu Images (`image.baidu.com`), Sogou (`pic.sogou.com`, "以图搜图"), Yande
 
 ### Due-diligence workflow (how the sources chain)
 
-1. **Anchor identity** — start from the **USCC** (18-char Unified Social Credit Code) or the exact **Chinese legal name**. Only a domain? Run **ICP lookup** to get the registrant, then search that.
+1. **Anchor identity** — start from the **USCC** (18-char Unified Social Credit Code) or the exact **Chinese legal name**. Only a domain? Run **ICP lookup** to get the registrant, then search that. Before searching, check the USCC's last character, a mod-31 check digit (GB 32100-2015), to catch transcription errors; [`china-usci`](https://github.com/zbl1998-sdjn/china-usci) (MIT, offline) does it. A valid code does not prove the company exists, and a few real codes from the early pilot provinces (Fujian) fail the check: confirm on GSXT either way.
 2. **Ground truth** — verify on **GSXT**: status, USCC, legal representative, capital, business scope, shareholders.
 3. **Enrichment** — **TianYanCha/QCC/Aiqicha** (+ **ENScan_GO** automation) for cross-holdings, litigation, patents, change history, subsidiary map, ICP/apps/公众号.
 4. **UBO resolution (the hard part)** — Chinese registries show shareholders but **not** a natural-person UBO. Climb through intermediate holdings (often in other provinces or offshore HK/BVI/Cayman) using the parent jurisdiction's registry + **OpenCorporates/Sayari**. Watch for VIE structures and state-linked entities designed for opacity.
