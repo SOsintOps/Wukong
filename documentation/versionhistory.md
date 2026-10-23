@@ -4,6 +4,12 @@ Changelog of the releases of Wukong, the China-focused OSINT workstation of SOsi
 
 ---
 
+## 0.1.10 — 2026
+
+- **Added:** `wukong_install.sh`: a small easter egg in the installed desktop. Finding it is part of the fun. In step with Speculator 0.12.6.
+
+---
+
 ## 0.1.9 — 2026
 
 - **Fixed:** `config/tools.conf`: the three Consensus entries put the subcommand first (`consensus user {target} ...`). Consensus 0.4.11 only strips `--no-update-check` before it looks for the subcommand; any other leading option (`--no-color`, `-q`, `-a`) turns the whole line into a scan and the word `user`, `email` or `phone` was searched as an extra username. Reports carried results for that word, and the phone entry spent about five minutes on a full username scan of "phone". Reported upstream. In step with Speculator 0.12.5.

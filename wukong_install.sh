@@ -2,7 +2,7 @@
 
 # ###############################################################
 # # WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT
-# # Version: 0.1.9
+# # Version: 0.1.10
 # # Target:  Debian 13 "Trixie" (amd64)
 # # A China-focused OSINT spinoff of the Speculator Project.
 # # Adds: full CJK stack (fonts + fcitx5 IME + zh locales),
@@ -349,7 +349,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 {
     echo "#################################################################"
-    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.9      #"
+    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.10     #"
     echo "# Target: Debian 13 Trixie (amd64)                             #"
     echo "#################################################################"
     echo "# Real user : $REAL_USER"
@@ -439,7 +439,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
         # shadowsocks-libev: lightweight Shadowsocks client (ss-local, ss-redir)
         wireguard-tools openvpn proxychains4 shadowsocks-libev
         # Desktop / utilities
-        zenity kazam bleachbit libxcb-cursor0 docker.io docker-compose evince
+        zenity kazam bleachbit libxcb-cursor0 docker.io docker-compose evince cool-retro-term
         # OCR of the document sources in Quaesitor: engine plus the language packs
         # (English is built in; Italian, simplified and traditional Chinese, Russian
         # and Arabic read accents and other scripts), and ICU for the transliteration
