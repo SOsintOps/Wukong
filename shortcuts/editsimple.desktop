@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=EditSimple
+Comment=Video editor to explain a fact or show evidence: tracking, zoom, pixelation, slides
+Categories=AudioVideo;Video;OSINT;
+Exec=__HOME__/.local/share/wukong/scripts/editsimple.sh %f
+Icon=__HOME__/.local/share/wukong/programs/EditSimple/editsimple/assets/logo.png
+Terminal=false
+MimeType=video/mp4;video/x-matroska;video/quicktime;video/webm;video/x-msvideo;

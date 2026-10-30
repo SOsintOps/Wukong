@@ -1,6 +1,6 @@
 # Wukong (悟空)
 
-![Version](https://img.shields.io/badge/version-0.1.10-blue)
+![Version](https://img.shields.io/badge/version-0.1.11-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![OS](https://img.shields.io/badge/OS-Debian%2013%20Trixie-red)
 ![Shell](https://img.shields.io/badge/shell-bash-yellow)
@@ -81,6 +81,7 @@ Two graph tools sit in the **Frameworks** launcher, next to Recon-ng, sn0int, Ch
 
 ### Reporting
 
+- [**EditSimple**](https://github.com/tingon11/EditSimple), with its own entry in the application menu: a video editor to explain a fact or show evidence, with cuts, freeze frames, fast or slow motion with a clock, text, boxes and arrows that follow a subject, a zoom box, pixelation that follows faces and plates, slides, audio tracks and a logo, exported to MP4 with ffmpeg. The installer also downloads its VitTrack tracking model ([opencv_zoo](https://github.com/opencv/opencv_zoo/tree/main/models/object_tracking_vittrack), Apache-2.0, checked against its SHA-256). Audio preview works only on Windows: on Linux the exported MP4 has sound, playback in the editor is silent.
 - [**ONLYOFFICE Desktop Editors**](https://www.onlyoffice.com/desktop.aspx), from its official APT repository, opens Speculator's `.docx` [report templates](documentation/04-faq.md#are-there-report-templates-for-wukong) with the layout fidelity of Word; Chinese text renders with the Noto CJK fonts above.
 
 ### Browsers

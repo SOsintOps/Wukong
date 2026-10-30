@@ -4,6 +4,12 @@ Changelog of the releases of Wukong, the China-focused OSINT workstation of SOsi
 
 ---
 
+## 0.1.11 — 2026
+
+- **New:** [EditSimple](https://github.com/tingon11/EditSimple) (GPL-3.0 with attribution terms), a video editor by the author of OSInt Graph made to explain a fact or show evidence: cuts, freeze frames, fast or slow motion with a clock, overlays that follow a subject, zoom box, pixelation that follows faces and plates, slides, audio tracks, export to MP4 with ffmpeg (Debian 13 ships 7.1, the release it asks for). Cloned in `~/.local/share/wukong/programs/EditSimple` with its venv `EditSimpleEnvironment`; `python3-tk` joins the system packages for its Tk interface. The VitTrack tracking model (opencv_zoo, Apache-2.0) is downloaded with its licence into the program's `tools/vittrack/`, checked against the SHA-256 the program expects. Menu entry "EditSimple" (`scripts/editsimple.sh`, `shortcuts/editsimple.desktop`, the program's own logo as icon), which also opens a video or project passed to it. Known limits on Linux: no audio in the preview (the exported MP4 has sound), the font picker lists only the DejaVu fonts it ships, the "Open tools folder" button does not work. `tests/test_wukong.sh` checks the install, the model fingerprint and the menu entry. In step with Speculator 0.13.0.
+
+---
+
 ## 0.1.10 — 2026
 
 - **Added:** `wukong_install.sh`: a small easter egg in the installed desktop. Finding it is part of the fun. In step with Speculator 0.12.6.

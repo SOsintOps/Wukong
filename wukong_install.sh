@@ -2,7 +2,7 @@
 
 # ###############################################################
 # # WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT
-# # Version: 0.1.10
+# # Version: 0.1.11
 # # Target:  Debian 13 "Trixie" (amd64)
 # # A China-focused OSINT spinoff of the Speculator Project.
 # # Adds: full CJK stack (fonts + fcitx5 IME + zh locales),
@@ -349,7 +349,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 {
     echo "#################################################################"
-    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.10     #"
+    echo "# WUKONG (悟空) - CHINA OSINT VM INSTALLATION SCRIPT v0.1.11     #"
     echo "# Target: Debian 13 Trixie (amd64)                             #"
     echo "#################################################################"
     echo "# Real user : $REAL_USER"
@@ -448,6 +448,8 @@ exec > >(tee -a "$LOG_FILE") 2>&1
         tesseract-ocr tesseract-ocr-ita tesseract-ocr-chi-sim tesseract-ocr-chi-tra
         tesseract-ocr-rus tesseract-ocr-ara
         python3-icu
+        # Tk for the EditSimple interface (its venv sees it through --system-site-packages)
+        python3-tk
         # GNOME extensions
         gnome-shell-extensions gnome-shell-extension-manager
         gnome-shell-extension-dash-to-panel
@@ -835,6 +837,24 @@ FCITX5_EOF
         [ -f "$PROGRAMS_DIR/quaesitor/$_conf.example" ] && [ ! -f "$PROGRAMS_DIR/quaesitor/$_conf" ] \
             && run_as_user cp "$PROGRAMS_DIR/quaesitor/$_conf.example" "$PROGRAMS_DIR/quaesitor/$_conf"
     done
+
+    # -- 3i-quater. EditSimple (video editor to explain a fact or show evidence: tracking,
+    # zoom, pixelation, slides; by the author of OSInt Graph). It keeps config.json
+    # and tools/ next to the program. Debian 13 ships ffmpeg 7.1, the release it asks for.
+    install_py_tool_from_git "https://github.com/tingon11/EditSimple"
+    # VitTrack tracking model (opencv_zoo, Apache 2.0) with its licence, checked
+    # against the fingerprint the program itself expects.
+    _VIT_DIR="$PROGRAMS_DIR/EditSimple/tools/vittrack"
+    if [ -d "$PROGRAMS_DIR/EditSimple" ] && [ ! -f "$_VIT_DIR/object_tracking_vittrack_2023sep.onnx" ]; then
+        echo "--> Downloading the VitTrack model for EditSimple..."
+        if run_as_user mkdir -p "$_VIT_DIR"             && run_as_user curl -fsSL -o "$_VIT_DIR/vittrack.part"                 "https://github.com/opencv/opencv_zoo/raw/main/models/object_tracking_vittrack/object_tracking_vittrack_2023sep.onnx"             && [ "$(sha256sum "$_VIT_DIR/vittrack.part" | cut -d' ' -f1)" = "2990f0b7cd44d92afa48cd97db6de7be113fc1d9594fddb74e2725c10478e91d" ]             && run_as_user curl -fsSL -o "$_VIT_DIR/LICENSE"                 "https://raw.githubusercontent.com/opencv/opencv_zoo/main/models/object_tracking_vittrack/LICENSE"             && run_as_user mv "$_VIT_DIR/vittrack.part" "$_VIT_DIR/object_tracking_vittrack_2023sep.onnx"; then
+            mark_ok "model:vittrack"
+        else
+            rm -f "$_VIT_DIR/vittrack.part"
+            echo "WARNING: VitTrack model not downloaded (EditSimple: Configure > Download)."
+            mark_fail "model:vittrack"
+        fi
+    fi
 
     # -- 3i-ter. Flowsint (graph-based investigation platform, Docker images) --
     # The containers (API, worker, web app, PostgreSQL, Redis, Neo4j) come from

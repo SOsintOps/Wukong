@@ -121,7 +121,7 @@ These are documented in the Speculator project; summarised here by category:
 | Hash | NameThatHash, SearchThatHash |
 | Domain / infra | Amass, Subfinder, Httpx, Nuclei, Sublist3r, theHarvester, Photon, Metagoofil, Fierce |
 | Social | Instaloader, Toutatis, Osintgram, BDFR (Reddit) |
-| Video | yt-dlp, Streamlink, Gallery-DL |
+| Video | yt-dlp, Streamlink, Gallery-DL; EditSimple (video editor for evidence, own menu entry) |
 | Archives | Waybackpy, Waybackpack, Internetarchive, ArchiveBox |
 | Image / metadata | Exiftool, Mat2, Xeuledoc, Carbon14, Mediainfo |
 | Frameworks | Recon-NG, sn0int, changedetection.io, Maigret Web, Quaesitor (case graph, port 5002), Flowsint (Docker, port 5173) |
