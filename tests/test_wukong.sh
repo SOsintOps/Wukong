@@ -147,8 +147,12 @@ _test "installer installs ONLYOFFICE Desktop Editors" "true" \
   "$(grep -q 'apt install -y onlyoffice-desktopeditors' "$installer" && echo true || echo false)"
 _test "ONLYOFFICE repository is signed-by a dedicated keyring" "true" \
   "$(grep -q 'signed-by=/etc/apt/keyrings/onlyoffice.gpg' "$installer" && echo true || echo false)"
-_test "installer installs EditSimple" "true" \
-  "$(grep -q 'install_py_tool_from_git "https://github.com/tingon11/EditSimple"' "$installer" && echo true || echo false)"
+_test "installer installs EditSimple from the Linux fork" "true" \
+  "$(grep -q 'install_py_tool_from_git "https://github.com/SOsintOps/EditSimple" requirements.txt linux' "$installer" && echo true || echo false)"
+_test "installer installs EditSimple from one source only" "1" \
+  "$(grep -c 'install_py_tool_from_git "https://github.com/[^"]*/EditSimple"' "$installer")"
+_test "install_py_tool_from_git moves an existing clone to the requested branch" "true" \
+  "$(grep -q 'checkout -B "$branch" "origin/$branch"' "$installer" && echo true || echo false)"
 _test "EditSimple VitTrack model is checked by SHA-256" "true" \
   "$(grep -q '2990f0b7cd44d92afa48cd97db6de7be113fc1d9594fddb74e2725c10478e91d' "$installer" && echo true || echo false)"
 _test "EditSimple menu entry runs scripts/editsimple.sh" "true" \
