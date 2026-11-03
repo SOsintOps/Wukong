@@ -154,10 +154,6 @@ Yes:
 - [Argos](https://github.com/SOsintOps/Argos) is the same idea on Ubuntu Budgie 24.04 or 26.04 LTS.
 - [Quaesitor](https://github.com/SOsintOps/quaesitor) is the case graph under **Frameworks**, which keeps a name in characters and its pinyin as one node.
 - [Exploratores](https://github.com/SOsintOps/Exploratores) is the browser toolkit; China is on its country-sources roadmap.
-- [Aethelburg](https://github.com/SOsintOps/Aethelburg-project) does for UK companies what the KYC layer does for Chinese ones.
-- [Elementary CTI](https://github.com/SOsintOps/elementary-CTI) tracks ransomware actors, some of them Chinese-speaking.
-- [TelEgrapherX](https://github.com/SOsintOps/TelEgrapherX), [TGchat-analytics](https://github.com/SOsintOps/TGchat-analytics) and [maigret](https://github.com/SOsintOps/maigret) are the SOsintOps forks for Telegram and usernames.
-- [Il Conclave](https://github.com/SOsintOps/il-conclave) and [Codex Machinae](https://github.com/SOsintOps/codex-machinae) cover analytic procedures and building tools with LLMs.
 - The [Intelligence Field Notes](https://github.com/SOsintOps/intelligence-field-notes) hold the method all of them share.
 
 ### Does Wukong guarantee every tool works out of the box?
